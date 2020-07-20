@@ -5,8 +5,6 @@
 	<?php //include "conexao/funcao.php" ;?>
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
     <link rel="stylesheet" href="../../../includes/bootstrap/css/bootstrap.css">
-    <script type="text/javascript" src="js/libs/angular.min.js"></script>
-    <script type="text/javascript" src="js/libs/angular-ui-router.min.js"></script>
 	<title></title>
 </head>
 <body id="espelhaIndex">
@@ -58,36 +56,49 @@
 
 	<div id="escala" class="">
 		<?php
-			$query="SELECT DATE_FORMAT(DataPalestra, '%d') as diapalestra, IdPalestra, DataPalestra, Palestrante, TemaPalestra, Semana, DATE_FORMAT(DataPalestra, '%d/%m/%Y') as dataPalestra
-			FROM palestra where DataPalestra >= DATE_FORMAT(now(), '%d/%m/%Y') and Semana='sexta'
-			order by diapalestra desc";	
+			$mes = date('m');
+			$query="SELECT DATE_FORMAT(DataPalestra, '%d') as diapalestra, DATE_FORMAT(DataPalestra, '%m') as mespalestra, IdPalestra, Palestrante, TemaPalestra, Semana, DATE_FORMAT(DataPalestra, '%d/%m/%Y') as dataPalestra
+			FROM palestra where Semana='sexta' AND DATE_FORMAT(DataPalestra, '%m')=$mes order by diapalestra desc";	
 			$rs = mysqli_query($conn, $query) or die(mysqli_error($conn));
-			$linha = mysqli_fetch_array($rs); //echo $linha[2];
+			$linha = mysqli_fetch_array($rs); //echo $linha['diapalestra'];
 			$registros = $rs->num_rows; //echo $registros;
-			$arrayConsulta = mysqli_fetch_array($rs);
-			$diaPalestra = $arrayConsulta['diapalestra'];
+			//$arrayConsulta = mysqli_fetch_array($rs);
+			$diaPalestra = $linha['diapalestra'];//echo $diaPalestra;
+			$mes = $linha['mespalestra']; //echo $mes;
 			
-			$m = date('d');//echo $m;
-			if($diaS==$diaPalestra or $diaS_1==$diaPalestra or $diaS_2==$diaPalestra or $diaS_3==$diaPalestra or $diaS_4==$diaPalestra or $diaS_5==$diaPalestra or $diaS_6==$diaPalestra or $_7==$diaPalestra){
+
+			$m = date('m');//echo $m;
+			if($diaS==$diaPalestra or $diaS_1==$diaPalestra or $diaS_2==$diaPalestra or $diaS_3==$diaPalestra or $diaS_4==$diaPalestra or $diaS_5==$diaPalestra or $diaS_6==$diaPalestra or $diaS_7==$diaPalestra){
 				for($i=0; $i < $registros; $i++){
 			
-					$diaBD = $arrayConsulta['DataPalestra'];//echo $diaBD;
-					$palestrante = $arrayConsulta['Palestrante'];
-					$tema = $arrayConsulta['TemaPalestra'];
-					$sem = $arrayConsulta['Semana'];
-					$dd = explode("-", $diaBD);
+					$diaBD = $linha['dataPalestra'];//echo $diaBD;
+					$palestrante = $linha['Palestrante'];
+					$tema = $linha['TemaPalestra'];
+					$sem = $linha['Semana'];//echo $sem['Semana'];
+					$dd = explode("/", $diaBD);
+				
 				}//fechamento do for
 				?>
 				<div class="sexta border border-success p-2 rounded">
 					<?php
 						$smq = "Sexta-Feira";
 							?>
-							<p class="sem text-uppercase"><?php echo strtoupper($linha['Semana']) ?> / Dia:&nbsp &nbsp<?php echo $arrayConsulta['diapalestra'] ;?></p>
+							<p class="sem text-uppercase"><?php echo strtoupper($sem) ?> / Dia:&nbsp &nbsp<?php echo $dd['0'] ;?></p>
 							<p class="ortD">Orador: <?php echo utf8_encode($palestrante) ;?> </p>
-							<p class="tD">Tema: <?php echo utf8_encode($tema) ;?></p>
+							<p class="tD">Tema: <?php echo utf8_decode($tema) ;?></p>
 				<?php
-			}//Fim do If
-			?>
+			}else{
+				?>
+				<div class="sexta border border-success p-2 rounded">
+				<?php
+				$smq = "sexta";
+				?>
+						<p class="sem text-uppercase"><?php echo "Não informado" ?> / Dia:&nbsp &nbsp<?php ?></p>
+						<p class="ortD">Orador: <?php echo "Não informado" ;?> </p>
+						<p class="tD">Tema: <?php echo  "Não informado";?></p>
+		<?php
+		} ;     //Fim do If
+		?>
 				</div>
 				<?php
 				?>

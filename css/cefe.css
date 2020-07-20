@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+*{
+    font-family: 'Roboto', sans-serif;
+    margin: 0px;
+    padding: 0%;
+}
+.corpo{
+    overflow: hidden;
+}
+.textoItalico{
+    font-size: small;
+    font-style: italic;
+}
+.cabeca{
+    display: block;
+    background-image: url("../cabeca/imagens/plantacaoflores2.png");
+    min-height: 150px;
+    border: solid 1px #cccccc;
+}
+.portchico{ 
+    float: right; 
+    margin-right:2%;
+}
+.portchico img{
+    width:120px;
+    height: 149px;
+}
+.logo{
+    float: left;
+    margin-left: 2%;
+}
+.logo img{
+    height: 100px;
+    padding: 10px;
+}
+.frasechico{
+    float: center;
+    text-align: center;
+    padding: 10px;
+}
+.assinatura{
+    float: right;
+
+
+}
+.assinatura img{
+    height: 50px;
+    padding: 5px;
+    margin-top: 25px;
+
+}
+
+
+
+

@@ -1,0 +1,15 @@
+Banco de Dados
+servidor: 179.188.16.98
+usuário: cefeemmanuel1
+
+Host de FTP: ftp.cefeemmanuel.com.br
+Usuário de FTP: cefeemmanuel1
+senha: cefe12345
+----------------------------
+Banco de Dados
+servidor: 187.45.196.186
+usuário: provacefe1
+
+Host de FTP: ftp.prova.cefeemmanuel.com.br
+Usuário de FTP: provacefeemmanue1
+senha: CEfe@135798642

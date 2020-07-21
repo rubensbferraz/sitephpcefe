@@ -4,6 +4,7 @@
 	<?php include ("../../../conexao/conexao.php") ?>
 	<meta http-equiv="Content-Type" content="text/html" charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="aplic.css">
 	<link rel="stylesheet" href="../../../includes/bootstrap/css/bootstrap.css" type="text/css">
 	<link rel="stylesheet" href="../../../includes/bootstrap/css/bootstrap-responsive.css" type="text/css">
     <title>Cadastrando Palestras</title>
@@ -26,10 +27,19 @@
 	</script>
 </head>
 <body>
+<nav class="navbar navbar-light bg-light row d-inline-block ml-1 p-2 menuCadastro">
+  <a class="navbar-brand" href="../../../index.php">Home
+    <img src="../../../imagens/navegacaoDireita.png" width="30" height="25" alt="">
+  </a>
+  <a class="navbar-brand" href="palestra.php">cadastro
+    <img src="../../../imagens/navegacaoDireita.png" width="25" height="25" alt="">
+  </a>
+</nav>
 <section id="palest" class="container">
 		<form class="form-group" action="ano.php"  method="POST" name="palestra">
 			<div class="row">
 					<legend>Ordenando Escala de Palestras Públicas</legend>
+					<img src="" alt="" srcset="">
 				<div class="col-6">
 						<label for="DataPalestra">Data</label>
 						<input class="form-control" type="date" name="DataPalestra"/>

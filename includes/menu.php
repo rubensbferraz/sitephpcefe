@@ -20,7 +20,7 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="centroespirita" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">CENTRO ESPÍRITA</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Livraria</a>
+                    <a class="dropdown-item" href="pginternas/ativo-comum/palestra/palestra.php">Livraria</a>
                     <a class="dropdown-item" href="#">Biblioteca</a>
                     <a class="dropdown-item" href="pginternas/pagMenu/acessos/admin.php">Administração</a>
                 </li>

@@ -32,10 +32,9 @@
 		$dia_array = array('Domingo','Segunda-Feira','Terça-Feira','Quarta-Feira','Quinta-Feira','Sexta-Feira','Sábado');
 
 		$dt = date("Y-m-d");
-		$diaS = date('d', strtotime($dt)); //echo $diaS;//DIA de Hoje DO SISTEMA	
 		$diaNmSem = date('w', strtotime($dt)); //echo $diaNmSem; //número que representa o dia Da semana 
 		$diaTxSem = $dia_array[$diaNmSem]; //texto referente ao semana 	
-
+		
 		//Captura númeração corresponte a semana e 0 a 6 Sendo 0 para domingo e 6 para sábado
 		$diaNmSem_1 = date('w', strtotime("+1 days", strtotime($dt))); //echo $diaNmSem_1; //Quarta-Feira
 		$diaNmSem_2 = date('w', strtotime("+2 days", strtotime($dt))); //echo $diaNmSem_2; //Quinta-feira
@@ -44,8 +43,9 @@
 		$diaNmSem_5 = date('w', strtotime("+5 days", strtotime($dt))); //echo $diaNmSem_5; //Domingo
 		$diaNmSem_6 = date('w', strtotime("+6 days", strtotime($dt))); //echo $diaNmSem_6; //Segunta-feira
 		$diaNmSem_7 = date('w', strtotime("+7 days", strtotime($dt))); //echo $diaNmSem_7; //Terça-feira
-
+		
 		//Captura númeração corresponte ao dia do sistema
+		$diaS = date('d', strtotime($dt)); //echo $diaS;//DIA de Hoje DO SISTEMA	
 		$diaS_1 = date('d', strtotime("+1 days", strtotime($dt))); //echo $diaS_1; //Quarta-Feira
 		$diaS_2 = date('d', strtotime("+2 days", strtotime($dt))); //echo $diaS_2; //Quinta-feira
 		$diaS_3 = date('d', strtotime("+3 days", strtotime($dt))); //echo $diaS_3; //Sexta-feira
@@ -58,35 +58,45 @@
 
 	<div id="escala" class="">
 		<?php
-			$query="SELECT DATE_FORMAT(DataPalestra, '%d') as diapalestra, IdPalestra, DataPalestra, Palestrante, TemaPalestra, Semana, DATE_FORMAT(DataPalestra, '%d/%m/%Y') as dataPalestra
-			FROM palestra where DataPalestra >= DATE_FORMAT(now(), '%d/%m/%Y') and Semana='domingo'
-			order by diapalestra desc";	
+			$mes = date('m');
+			$query="SELECT DATE_FORMAT(DataPalestra, '%d') as diapalestra, DATE_FORMAT(DataPalestra, '%m') as mespalestra, IdPalestra, Palestrante, TemaPalestra, Semana, DATE_FORMAT(DataPalestra, '%d/%m/%Y') as dataPalestra
+			FROM palestra where Semana='domingo' AND DATE_FORMAT(DataPalestra, '%m')=$mes order by diapalestra desc";	
 			$rs = mysqli_query($conn, $query) or die(mysqli_error($conn));
-			$linha = mysqli_fetch_array($rs); //echo $linha[2];
+			$linha = mysqli_fetch_array($rs); //echo $linha['diapalestra'];
 			$registros = $rs->num_rows; //echo $registros;
-			$arrayConsulta = mysqli_fetch_array($rs);
-			$diaPalestra = $arrayConsulta['diapalestra'];
+			//$arrayConsulta = mysqli_fetch_array($rs);
+			$diaPalestra = $linha['diapalestra'];//echo $diaPalestra;
 			
 			$m = date('d');//echo $m;
-			if($diaS==$diaPalestra or $diaS_1==$diaPalestra or $diaS_2==$diaPalestra or $diaS_3==$diaPalestra or $diaS_4==$diaPalestra or $diaS_5==$diaPalestra or $diaS_6==$diaPalestra or $_7==$diaPalestra){
+			if($diaS==$diaPalestra or $diaS_1==$diaPalestra or $diaS_2==$diaPalestra or $diaS_3==$diaPalestra or $diaS_4==$diaPalestra or $diaS_5==$diaPalestra or $diaS_6==$diaPalestra or $diaS_7==$diaPalestra){
 				for($i=0; $i < $registros; $i++){
 			
-					$diaBD = $arrayConsulta['DataPalestra'];//echo $diaBD;
-					$palestrante = $arrayConsulta['Palestrante'];
-					$tema = $arrayConsulta['TemaPalestra'];
-					$sem = $arrayConsulta['Semana'];
-					$dd = explode("-", $diaBD);
+					$diaBD = $linha['dataPalestra'];//echo $diaBD;
+					$palestrante = $linha['Palestrante'];
+					$tema = $linha['TemaPalestra'];
+					$sem = $linha['Semana'];
+					$dd = explode("/", $diaBD);
 				}//fechamento do for
 				?>
-				<div class="sexta border border-success p-2 rounded">
+				<div class="domingo border border-success p-2 rounded">
 					<?php
-						$smq = "Sexta-Feira";
-							?>
-							<p class="sem text-uppercase"><?php echo strtoupper($linha['Semana']) ?> / Dia:&nbsp &nbsp<?php echo $arrayConsulta['diapalestra'] ;?></p>
+						$smq = "domingo";
+					?>
+							<p class="sem text-uppercase"><?php echo strtoupper($sem) ?> / Dia:&nbsp &nbsp<?php echo $dd['0'] ;?></p>
 							<p class="ortD">Orador: <?php echo utf8_encode($palestrante) ;?> </p>
 							<p class="tD">Tema: <?php echo utf8_encode($tema) ;?></p>
 				<?php
-			}//Fim do If
+			}else{
+				?>
+				<div class="domingo border border-success p-2 rounded">
+					<?php
+						$smq = "domingo";
+					?>
+							<p class="sem text-uppercase"><?php echo "Não informado" ?> / Dia:&nbsp &nbsp<?php ?></p>
+							<p class="ortD">Orador: <?php echo "Não informado" ;?> </p>
+							<p class="tD">Tema: <?php echo  "Não informado";?></p>
+			<?php
+			} ;     //Fim do If
 			?>
 				</div>
 				<?php

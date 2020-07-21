@@ -32,8 +32,6 @@
     $pass       = '';
     $banco      = 'cefeemmanuel1';
 
-
-
         $conn = mysqli_connect($servidor, $usuario, $pass, $banco);
 
             if(!$conn){

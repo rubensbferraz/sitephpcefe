@@ -47,6 +47,9 @@
                     <label class="mb-0 p-0" for="preco">Preço</label>
                     <input class="dinheiro form-control" type="text" name="preco">
                 </div>
+            </div>
+            <!-- Fim segundo bloco -->
+            <div class="col-md-4 bd-highlight">
                 <div class="form-group">
                     <label class="mb-0 p-0" for="ideditora">Editora &nbsp &nbsp<span><a href="#"><img src="cadastro.png" alt="" srcset=""></a></span></label>
                     <select name="ideditora" class="form-control" id="ideditora">
@@ -55,18 +58,6 @@
                         <option value="<?php echo $listaEd[0];?>" ><?php echo utf8_encode($listaEd[1]);?></option>
                     <?php }?>
                     </select>
-                </div>
-            </div>
-            <!-- Fim segundo bloco -->
-            <div class="col-md-4 bd-highlight">
-                <div class="form-group">
-                    <label class="mb-0 p-0" for="idtbtipo">Tipo da Obra &nbsp &nbsp<span><a href="#"><img src="cadastro.png" alt="" srcset=""></a></span></label>
-                    <select name="idtbtipo" class="form-control" id="idtbtipo">
-                        <option value="">Entre com o Tipo da obra</option>
-                        <?php while($listaTipo = mysqli_fetch_array($listaTipoSql)){ ?>
-                        <option value="<?php echo $listaTipo[0];?>"><?php echo utf8_encode($listaTipo[1]);?></option>    
-                        <?php } ?>
-                    </select>  
                 </div>
                 <div class="form-group">
                     <label class="mb-0 p-0" for="idpesquisador">Pesquisador &nbsp &nbsp<span><a href="#"><img src="cadastro.png" alt="" srcset=""></a></span></label>

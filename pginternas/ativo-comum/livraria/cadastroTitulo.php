@@ -47,6 +47,15 @@
                     <label class="mb-0 p-0" for="preco">Preço</label>
                     <input class="dinheiro form-control" type="text" name="preco">
                 </div>
+                <div class="form-group">
+                    <label class="mb-0 p-0" for="idcomposicao">Tipo da Obra &nbsp &nbsp<span><a href="#"><img src="cadastro.png" alt="" srcset=""></a></span></label>
+                    <select name="idcomposicao" class="form-control" id="idcomposicao">
+                        <option value="">Entre com Tipo</option>
+                    <?php while($listaCom = mysqli_fetch_array($listaComSql)){ ?>
+                        <option value="<?php echo $listaCom[0];?>" ><?php echo utf8_encode($listaCom[1]);?></option>
+                    <?php }?>
+                    </select>
+                </div>
             </div>
             <!-- Fim segundo bloco -->
             <div class="col-md-4 bd-highlight">
@@ -60,30 +69,30 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label class="mb-0 p-0" for="idpesquisador">Pesquisador &nbsp &nbsp<span><a href="#"><img src="cadastro.png" alt="" srcset=""></a></span></label>
-                    <select name="idpesquisador" id="idpesquisador" class="form-control">
+                    <label class="mb-0 p-0" for="">Pesquisador &nbsp &nbsp<span><a href="#"><img src="cadastro.png" alt="" srcset=""></a></span></label>
+                    <select name="idcomposicao" id="" class="form-control">
                         <option value="">Entre com o Pesquisador</option>
-                        <?php while($listaPesq = mysqli_fetch_array($listaPesqSql)){ ?>
-                        <option value="<?php echo $listaPesq[0];?>"><?php echo utf8_encode($listaPesq[1]);?></option>    
+                        <?php while($listaComPesq = mysqli_fetch_array($listaComPesqSql)){ ?>
+                        <option value="<?php echo $listaComPesq[0];?>"><?php echo utf8_encode($listaComPesq[2]);?></option>    
                         <?php } ?>
                     </select>
                 </div> 
                 <div class="form-group">
-                    <label class="mb-0 p-0" for="idpsicografo">Psicógrafo &nbsp &nbsp<span><a href="#"><img src="cadastro.png" alt="" srcset=""></a></span></label>
-                    <select name="idpsicografo" id="idpsicografo" class="form-control">
+                    <label class="mb-0 p-0" for="">Psicógrafo &nbsp &nbsp<span><a href="#"><img src="cadastro.png" alt="" srcset=""></a></span></label>
+                    <select name="idcomposicao" id="" class="form-control">
                         <option value="">Entre com o Psicógrafo</option>
-                        <?php while($listaPsi = mysqli_fetch_array($listaPsiSql)){ ?>
-                        <option value="<?php echo $listaPsi[0];?>"><?php echo utf8_encode($listaPsi[1]);?></option>    
+                        <?php while($listaComPsi = mysqli_fetch_array($listaComPsiSql)){ ?>
+                        <option ><?php echo utf8_encode($listaComPsi[2]);?></option>    
                         <?php } ?>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label class="mb-0 p-0" for="idautorEspiritual">Espírito Autor &nbsp &nbsp<span><a href="#"><img src="cadastro.png" alt="" srcset=""></a></span></label>
-                    <select name="idautorEspiritual" id="idautorEspiritual" class="form-control">
+                    <label class="mb-0 p-0" for="">Espírito Autor &nbsp &nbsp<span><a href="#"><img src="cadastro.png" alt="" srcset=""></a></span></label>
+                    <select name="idcomposicao" id="" class="form-control">
                         <option value="">Entre com o Espírito Autor</option>
-                        <?php while($listaAut = mysqli_fetch_array($listaAutSql)){ ?>
-                        <option value="<?php echo $listaAut[0];?>"><?php echo utf8_encode($listaAut[1]);?></option>    
-                        <?php } ?>
+                        <?php while($listaAutorPsi = mysqli_fetch_array($listaAutorPsiSql)){ ?>
+                        <option ><?php echo utf8_encode($listaAutorPsi[1]);?></option>    
+                        <?php }  ?>
                     </select>
                 </div>                                           
             </div>

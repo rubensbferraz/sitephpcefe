@@ -15,8 +15,8 @@
         /*$sql = mysqli_query($conn, "INSERT INTO cefeemmanuel1.tb_teste2 (idteste)
             VALUE('$texto')"or die("mysql error:" . mysqli_error()));*/
 
-        $sql = mysqli_query($conn, "INSERT INTO tb_titulos (titulo, descricao, edicao, dtPublicacao, isbn, preco, ideditora, idtbtipo, idpesquisador, idpsicografo, idautorEspiritual)
-            VALUE('$titulo', '$descricao', '$edicao', '$dtPublicacao', '$isbn', '$preco', '$ideditora', '$idcomposiao')"or die("mysql error:" . mysqli_error()));
+        $sql = mysqli_query($conn, "INSERT INTO tb_titulos (titulo, descricao, edicao, dtPublicacao, isbn, preco, ideditora, idcomposicao)
+            VALUE($titulo, $descricao, $edicao, $dtPublicacao, $isbn, $preco, $ideditora, $idcomposiao)"or die("mysql error:" . mysqli_error()));
 
             echo("Titulo cadastrado com sucesso..");
             //header("Location: cadastroTitulo.php",3000);

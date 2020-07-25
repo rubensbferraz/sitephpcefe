@@ -24,7 +24,7 @@
 
     //AQUI FINALIZA O TRABALHO COM A TABELA COMPOSIÇÃO
 
-    $listaAutorPsiSql = mysqli_query($conn, "SELECT aut.id, aut.espiritoAutor, psi.id FROM tb_autorespiritual aut, tb_psicografo psi where aut.idpsicografo=psi.id;") or die("mysql error:" . mysqli_error($conn)."<hr>\nQuery: $listaAutorPsiSql");
+    $listaAutorPsiSql = mysqli_query($conn, "SELECT psi.id, aut.espiritoAutor, aut.id  FROM tb_autorespiritual aut, tb_psicografo psi where aut.idpsicografo=psi.id;") or die("mysql error:" . mysqli_error($conn)."<hr>\nQuery: $listaAutorPsiSql");
     $listaAutorPsi = $listaAutorPsiSql->num_rows;
 
     /*$listaPesqSql = mysqli_query($conn, "SELECT pesq.id, pesq.pesquisador, pesq.email, pesq.celular FROM tb_pesquisador pesq  ;") or die("mysql error:" . mysqli_error($conn)."<hr>\nQuery: $listaPesqSql");

@@ -1,5 +1,13 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+    <title></title>
+    <?php include ("../../../conexao/conexao.php"); ?>
+</head>
+<body>
 <?php
-    include ("../../../conexao/conexao.php");
 
     $titulo             = $_POST['titulo'];
     $descricao          = $_POST['descricao'];
@@ -9,21 +17,28 @@
     $preco              = $_POST['preco'];
     $ideditora          = $_POST['ideditora'];
     $idcomposicao       = $_POST['idcomposicao'];
+
+    $pesquisador        = $_POST['idpesquisador'];
+    $psicografo         = $_POST['idpsicografo '];
+    $espiritoautor      = $_POST['idespiritoautor'];
     
-
-    if(isset($_POST['cadastrar'])){
-        /*$sql = mysqli_query($conn, "INSERT INTO cefeemmanuel1.tb_teste2 (idteste)
-            VALUE('$texto')"or die("mysql error:" . mysqli_error()));*/
-
-        $sql = mysqli_query($conn, "INSERT INTO tb_titulos (titulo, descricao, edicao, dtPublicacao, isbn, preco, ideditora, idcomposicao)
-            VALUE($titulo, $descricao, $edicao, $dtPublicacao, $isbn, $preco, $ideditora, $idcomposiao)"or die("mysql error:" . mysqli_error()));
-
+    $sql = "INSERT INTO tb_titulo (titulo, descricao, edicao, dtPublicacao, isbn, preco, ideditora, idcomposicao) VALUES('$titulo', '$descricao', '$edicao', '$dtPublicacao', '$isbn', '$preco', '$ideditora', '$idcomposicao')";
+    $sqlCom = "INSERT INTO tb_composicao (idpesquisar, idpsicografo, idautorEspiritual) VALUES('$pesquisador', '$psicografo', '$espiritoautor')";
+    
+    if(mysqli_query($conn, $sql,$sqlCom)){
             echo("Titulo cadastrado com sucesso..");
-            //header("Location: cadastroTitulo.php",3000);
+
                    
-    }elseif(isset($_POST['listar'])){
-            header("Location: listarTitulos.php",3000);
+    }elseif (isset($_POST['listar'])) {
+        header("Location: listarTitulos.php",3000);
+    }
+    
+    else  {
+        echo "Erro: " . $sql . "<br>" . mysqli_error($conn);
         
     }
-
-?>
+    
+    mysqli_close($conn);
+?>  
+</body>
+</html>

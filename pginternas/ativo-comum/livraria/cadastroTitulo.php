@@ -4,18 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../../includes/bootstrap/css/bootstrap.css" type="text/css">
-    <script src="../../../includes/jquery/jquery-3.5.1.min.js"></script> 
+    <link rel="stylesheet" href="../../../css/livraria.css"> 
     <title>Cadastrando Títulos</title>
 </head>
 <body>
-    <?php include ("../../../includes/navegacao.php"); 
+    <?php //include ("../../../includes/navegacao.php"); 
           include ("../../../conexao/conexao.php");
           include ("querys.php");
-    ?>
-    <script>
-        $('.dinheiro').mask('#.##0,00', {reverse: true});
-    </script>
+
+          ?>
     <div class="container">
+        <?php  
+          session_start();
+
+        ?>
         <legend class="text-center bg-info text-white">Cadastrando Títulos</legend>
         <form class="container" action="gravarTitulo.php" method="POST" name="tb_titulos">
         <div class="row">
@@ -48,15 +50,6 @@
                     <input id="dinheiro" class="form-control" type="number" min="0.00" max="10000.00" step="0.01" name="preco">
                 </div>
                 <div class="form-group">
-                    <label class="mb-0 p-0" for="idcomposicao">Tipo da Obra &nbsp &nbsp<span><a href="#"><img src="cadastro.png" alt="" srcset=""></a></span></label>
-                    <select name="idcomposicao" class="form-control" id="idcomposicao">
-                        <option value="">Entre com Tipo</option>
-                    <?php while($listaCom = mysqli_fetch_array($listaComSql)){ ?>
-                        <option value="<?php echo $listaCom[0];?>" ><?php echo utf8_encode($listaCom[1]);?></option>
-                    <?php }?>
-                    </select>
-                </div>
-                <div class="form-group">
                     <label class="mb-0 p-0" for="ideditora">Editora &nbsp &nbsp<span><a href="#"><img src="cadastro.png" alt="" srcset=""></a></span></label>
                     <select name="ideditora" class="form-control" id="ideditora">
                         <option value="">Entre com a Editora</option>
@@ -67,40 +60,56 @@
                 </div>                                          
             </div>
             <!-- Fim segundo bloco -->
+            <!-- inicio da interação com a tabela Composição -->
             <div class="col-md-4 bd-highlight">
-                <!-- inicio da interação com a tabela Composição -->
-                    <div class="form-group">
-                        <label class="mb-0 p-0" for="">Pesquisador &nbsp &nbsp<span><a href="#"><img src="cadastro.png" alt="" srcset=""></a></span></label>
-                        <select name="idcomposicao" id="" class="form-control">
+                <div class="form-group">
+                    <label class="mb-0 p-0" for="idtipoObra">Tipo da Obra &nbsp &nbsp<span><a href="#"><img src="cadastro.png" alt="" srcset=""></a></span></label>
+                    <select id="idtipoObra" name="idtipoObra" class="form-control">
+                        <option value="">Entre com Tipo</option>
+                            <?php while($listaTipo = mysqli_fetch_array($listaTipoSql)){ ?>
+                        <option value="<?php echo $listaTipo[0];?>" ><?php echo utf8_encode($listaTipo[1]);?></option>
+
+                    <?php }?>
+                    </select>
+                </div>
+                <div id="mostraNaoMed">
+                    <div class="form-group" id="naoMed">
+                        <label class="mb-0 p-0" for="idpesquisador">Pesquisador &nbsp &nbsp<span><a href="#"><img src="cadastro.png" alt="" srcset=""></a></span></label>
+                        <select name="idpesquisador" id="idpesquisador" class="form-control">
                             <option value="">Entre com o Pesquisador</option>
-                            <?php while($listaComPesq = mysqli_fetch_array($listaComPesqSql)){ ?>
-                            <option value="<?php echo $listaComPesq[0];?>"><?php echo utf8_encode($listaComPesq[2]);?></option>    
-                            <?php } ?>
-                        </select>
-                    </div> 
-                    <div class="form-group">
-                        <label class="mb-0 p-0" for="">Psicógrafo &nbsp &nbsp<span><a href="#"><img src="cadastro.png" alt="" srcset=""></a></span></label>
-                        <select name="idcomposicao" id="" class="form-control">
-                            <option value="">Entre com o Psicógrafo</option>
-                            <?php while($listaComPsi = mysqli_fetch_array($listaComPsiSql)){ ?>
-                            <option value="<?php echo $listaComPsi[0];?>" ><?php echo utf8_encode($listaComPsi[2]);?></option>    
+                            <?php while($listaNaoMedPesq = mysqli_fetch_array($listaNaoMedPesqSql)){ ?>
+                            <option value="<?php echo $listaNaoMedPesq[0];?>"><?php echo utf8_encode($listaNaoMedPesq[1]);?></option>    
                             <?php } ?>
                         </select>
                     </div>
-                    <div class="form-group">
-                        <label class="mb-0 p-0" for="">Espírito Autor &nbsp &nbsp<span><a href="#"><img src="cadastro.png" alt="" srcset=""></a></span></label>
-                        <select name="idpsicografo" id="" class="form-control">
-                            <option value="">Entre com o Espírito Autor</option>
-                            <?php while($listaAutorPsi = mysqli_fetch_array($listaAutorPsiSql)){ ?>
-                            <option value="<?php echo $listaAutorPsi[0];?>"><?php echo utf8_encode($listaAutorPsi[1]);?></option>    
-                            <?php }  ?>
-                        </select>
-                    </div> 
+                    <div id="mediunica">
+                        <div class="form-group">
+                            <label class="mb-0 p-0" for="idpsicografo">Psicógrafo &nbsp &nbsp<span><a href="#"><img src="cadastro.png" alt="" srcset=""></a></span></label>
+                            <select name="idpsicografo" id="idpsicografo" class="form-control">
+                                <option value="">Entre com o Psicógrafo</option>
+                                <?php while($listaMedPsi = mysqli_fetch_array($listaMedPsiSql)){ ?>
+                                <option value="<?php echo $listaMedPsi[0];?>" ><?php echo utf8_encode($listaMedPsi[1]);?></option>    
+                                <?php } ?>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="mb-0 p-0" for="idautorEspiritual">Espírito Autor &nbsp &nbsp<span><a href="#"><img src="cadastro.png" alt="" srcset=""></a></span></label>
+                            <select name="idautorEspiritual" id="idautorEspiritual" class="form-control">
+                                <option value="">Entre com o Espírito Autor</option>
+                                <?php while($listaMedAut = mysqli_fetch_array($listaMedAutSql)){ ?>
+                                <option value="<?php echo $listaMedAut[0];?>"><?php echo utf8_encode($listaMedAut[1]);?></option>    
+                                <?php }  ?>
+                            </select>
+                        </div>                     
+                    </div>
+                    
+                </div>
+               
             </div>
             <!-- Fim terceiro bloco -->
         </div>
             <div class=" text-right mr-2 mb-2">
-                <button class="btn btn-info" type="submit" name="cadastrar">Cadastrar</button>
+                <button class="btn btn-info" type="submit" name="btncadastrar">Cadastrar</button>
                 <button class="btn btn-info" type="submit" src="listarTitulos.php" name="listar">Listar</button>
             </div>
 
@@ -109,5 +118,7 @@
             <span class="d-inline-block p-2 small">Você está no Sistema de Cadastro de Titulos -&nbsp<?php include ('../../../includes/boasvindas.php'); ?>&nbspdata de hoje:&nbsp<?php echo date('d/m/Y') ?></span>
         </legend>
     </div>
+    <script src="../../../includes/bootstrap/js/javascript.js"></script>
+    <script src="../../../includes/bootstrap/js/jquery-3.5.1.min.js"></script>
 </body>
 </html>

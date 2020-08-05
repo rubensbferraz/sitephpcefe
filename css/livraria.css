@@ -1,4 +1,8 @@
 #mostraNaoMed div{
     display: none;
-    background-color: red;
+
+}
+
+#mostrarMediunica div{
+    display: none;
 }

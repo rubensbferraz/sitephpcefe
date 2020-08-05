@@ -1,29 +1,32 @@
 //var campo_qualquer = document.querySelector("input[name='nomeCampo']");
 var idtipoObra = document.querySelector("#idtipoObra");
 var mostraNaoMed = document.querySelector("#mostraNaoMed");//div Pai
+var mostrarMediunica = document.querySelector("#mostrarMediunica");
 var naoMed = document.querySelector("#naoMed"); //div filhas
-var mediunica = document.querySelector("#mediunica");
-var um = 1;
-var dois = 2;
+var mediunica =document.querySelector(".mediunica");
 
 //objetos
 
 //funcões
+function MostrarNaoMed(){
+        var mostrar = this.value;
+    if(mostrar == 1){
+        $('#mostraNaoMed').children(naoMed).show(); 
 
-
-function Mostrar(event){
-    event.preventDefault();
-    var mostrando = this.value;
-    if(mostrando == dois){
-        //alert(mostrando);
-        $('#mostraNaoMed').children(mediunica).hide();
-        $('#mostraNaoMed').children(mediunica).show();
-    } else {
-        //alert('Não entrei aqui');
+    }else{
         $('#mostraNaoMed').children(naoMed).hide();
-        $('#mostraNaoMed').children(naoMed).show();
     };
 };
 
-idtipoObra.addEventListener('change', Mostrar);
+function MostrarMed(){
+    var mostrarMed = this.value;
+    if(mostrarMed == 2){
+        $('#mostrarMediunica').children(mediunica).show();
+    }else{
+        $('#mostrarMediunica').children(mediunica).hide();
+    };
+}
+
+idtipoObra.addEventListener('change', MostrarNaoMed);
+idtipoObra.addEventListener('change', MostrarMed);
 

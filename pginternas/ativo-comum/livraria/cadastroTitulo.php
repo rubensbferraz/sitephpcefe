@@ -82,28 +82,28 @@
                             <?php } ?>
                         </select>
                     </div>
-                    <div id="mediunica">
-                        <div class="form-group">
-                            <label class="mb-0 p-0" for="idpsicografo">Psicógrafo &nbsp &nbsp<span><a href="#"><img src="cadastro.png" alt="" srcset=""></a></span></label>
-                            <select name="idpsicografo" id="idpsicografo" class="form-control">
-                                <option value="">Entre com o Psicógrafo</option>
-                                <?php while($listaMedPsi = mysqli_fetch_array($listaMedPsiSql)){ ?>
-                                <option value="<?php echo $listaMedPsi[0];?>" ><?php echo utf8_encode($listaMedPsi[1]);?></option>    
-                                <?php } ?>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label class="mb-0 p-0" for="idautorEspiritual">Espírito Autor &nbsp &nbsp<span><a href="#"><img src="cadastro.png" alt="" srcset=""></a></span></label>
-                            <select name="idautorEspiritual" id="idautorEspiritual" class="form-control">
-                                <option value="">Entre com o Espírito Autor</option>
-                                <?php while($listaMedAut = mysqli_fetch_array($listaMedAutSql)){ ?>
-                                <option value="<?php echo $listaMedAut[0];?>"><?php echo utf8_encode($listaMedAut[1]);?></option>    
-                                <?php }  ?>
-                            </select>
-                        </div>                     
-                    </div>
-                    
                 </div>
+                <div id="mostrarMediunica">
+                    <div class="form-group mediunica">
+                        <label class="mb-0 p-0" for="idpsicografo">Psicógrafo &nbsp &nbsp<span><a href="#"><img src="cadastro.png" alt="" srcset=""></a></span></label>
+                        <select name="idpsicografo" id="idpsicografo" class="form-control">
+                            <option value="">Entre com o Psicógrafo</option>
+                            <?php while($listaMedPsi = mysqli_fetch_array($listaMedPsiSql)){ ?>
+                            <option value="<?php echo $listaMedPsi[0];?>" ><?php echo utf8_encode($listaMedPsi[1]);?></option>    
+                            <?php } ?>
+                        </select>
+                    </div>
+                    <div class="form-group mediunica">
+                        <label class="mb-0 p-0" for="idautorEspiritual">Espírito Autor &nbsp &nbsp<span><a href="#"><img src="cadastro.png" alt="" srcset=""></a></span></label>
+                        <select name="idautorEspiritual" id="idautorEspiritual" class="form-control">
+                            <option value="">Entre com o Espírito Autor</option>
+                            <?php while($listaMedAut = mysqli_fetch_array($listaMedAutSql)){ ?>
+                            <option value="<?php echo $listaMedAut[0];?>"><?php echo utf8_encode($listaMedAut[1]);?></option>    
+                            <?php }  ?>
+                        </select>
+                    </div>                     
+                </div>
+                    
                
             </div>
             <!-- Fim terceiro bloco -->

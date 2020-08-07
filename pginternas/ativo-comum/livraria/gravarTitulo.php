@@ -45,10 +45,10 @@
         $resultado_Pesquisador = mysqli_query($conn, $grava_Pesquisador) or die("mysql error:" . mysqli_error($conn)."<hr>\nQuery: $grava_Pesquisador");
 
         if(mysqli_insert_id($conn)){
-            echo "Título cadastro com sucesso!";
+            $_SESSION['msg'] = "Título cadastro com sucesso!";
             header("Location: cadastroTitulo.php",3000);
         }else{
-            echo "Erro ao cadastrar a unidade de Título!";
+            $_SESSION['msg'] = "Erro ao cadastrar a unidade de Título!";
         }
     }elseif($tipo == 2){
         $grava_Titulo = "INSERT INTO tb_titulo (titulo, descricao, edicao, dtPublicacao, isbn, preco, ideditora, idtipoobra) VALUES(
@@ -77,10 +77,10 @@
         $resultado_Psicografo = mysqli_query($conn, $grava_psicografo) or die("mysql error:" . mysqli_error($conn)."<hr>\nQuery: $grava_psicografo");
         $resultado_autoEspiritual = mysqli_query($conn, $grava_autorEspiritual) or die("mysql error:" . mysqli_error($conn)."<hr>\nQuery: $grava_autorEspiritual");
         if(mysqli_insert_id($conn)){
-            echo "Título cadastro com sucesso!";
+            $_SESSION['msg'] = "Título cadastro com sucesso!";
             header("Location: cadastroTitulo.php",3000);
         }else{
-            echo "Erro ao cadastrar a unidade de Título!";
+            $_SESSION['msg'] = "Erro ao cadastrar a unidade de Título!";
         }
     }
      

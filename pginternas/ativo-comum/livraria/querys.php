@@ -8,24 +8,31 @@
     $listaEdSql = mysqli_query($conn, "SELECT id, editora, sigla FROM tb_editora  ;") or die("mysql error:" . mysqli_error($conn)."<hr>\nQuery: $listaEdSql");
     $listaEd = $listaEdSql->num_rows;
 
-    //trabalhado com a tabela TB_COMPOSICAO
+    //trabalhado com a tabela Pesquisador
+    $naomediunicoSql = mysqli_query($conn, "SELECT nm.id, nm.idtipoobra, nm.idpesquisador , p.id, p.pesquisador from tb_pesquisador p 
+    inner join tb_naomediunico nm on p.id=nm.idpesquisador")or die("mysql error:" . $naomediunicoSql . "<br>" . mysqli_error($conn));
+    $listanaomediunico = $naomediunicoSql->num_rows;
+
+    //trabalhando com a tabela Psicografo
+    $mediunicaSql = mysqli_query($conn, "SELECT m.id, m.idtipoobra, m.idpsicografo , psi.id, psi.psicografo from tb_mediunica m
+    inner join tb_psicografo psi on m.id=m.idpsicografo")or die("mysql error:" . $mediunicaSql . "<br>" . mysqli_error($conn));
+    $listamediunica = $mediunicaSql->num_rows;
+
+    //trabalhando com a tabela Autor Espiritual
+    $listaAutSql = mysqli_query($conn, "SELECT aut.id, aut.espiritoAutor, aut.idpsicografo , psi.id, psi.psicografo FROM tb_psicografo psi
+    inner join tb_autorespiritual aut on psi.id=aut.idpsicografo") or die("mysql error:" . $listaAutSql . "<br>" . mysqli_error($conn));
+    $listaAut =$listaAutSql->num_rows;
+
+
     $listaTipoSql = mysqli_query($conn, "SELECT tipo.id, tipo.tipoObra FROM tb_tipoobra tipo;") or die("mysql error:" . $listaTipoSql . "<br>" . mysqli_error($conn));
     $listaTipo =$listaTipoSql->num_rows;
 
-    $listaNaoMedSql = mysqli_query($conn, "SELECT naomed.id, naomed.idpesquisador, naomed.idtipoObra, pesq.id, pesq.pesquisador  FROM tb_naomediunico naomed, tb_pesquisador pesq ;") or die("mysql error:" . $listaNaoMedSql . "<br>" . mysqli_error($conn));
-    $listaNaoMed = $listaNaoMedSql->num_rows;
+    $listaPesqSql = mysqli_query($conn, "SELECT pesq.id, pesq.pesquisador FROM tb_pesquisador pesq;") or die("mysql error:" . $listaPesqSql . "<br>" . mysqli_error($conn));
+    $listaPesq = $listaPesqSql->num_rows;
 
-    $listaMedSql = mysqli_query($conn, "SELECT med.id, med.idpsicografo, med.idautorEspiritual, med.idtipoObra  FROM tb_mediunica med;") or die("mysql error:" . $listaMedSql . "<br>" . mysqli_error($conn));
-    $listaMed = $listaMedSql->num_rows;
+    $listaPsiSql = mysqli_query($conn, "SELECT psi.id, psi.psicografo FROM tb_psicografo psi;") or die("mysql error:" . $listaPsiSql . "<br>" . mysqli_error($conn));
+    $listaPsi = $listaPsiSql->num_rows;
 
-    $listaNaoMedPesqSql = mysqli_query($conn, "SELECT pesq.id, pesq.pesquisador FROM tb_pesquisador pesq ;") or die("mysql error:" . $listaNaoMedPesqSql . "<br>" . mysqli_error($conn));
-    $listaNaoMedPesq = $listaNaoMedPesqSql->num_rows;
-
-    $listaMedPsiSql = mysqli_query($conn, "SELECT psi.id, psi.psicografo FROM tb_psicografo psi;") or die("mysql error:" . $listaMedPsiSql . "<br>" . mysqli_error($conn));
-    $listaMedPsi = $listaMedPsiSql->num_rows;
-
-    $listaMedAutSql = mysqli_query($conn, "SELECT aut.id, aut.espiritoAutor FROM tb_autorespiritual aut;") or die("mysql error:" . $listaMedAutSql . "<br>" . mysqli_error($conn));
-    $listaMedAut =$listaMedAutSql->num_rows;
 
 
     //AQUI FINALIZA O TRABALHO COM A TABELA COMPOSIÇÃO

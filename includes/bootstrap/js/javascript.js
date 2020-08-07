@@ -1,5 +1,5 @@
 //var campo_qualquer = document.querySelector("input[name='nomeCampo']");
-var idtipoObra = document.querySelector("#idtipoObra");
+var idtipoObra = document.querySelector("#idtipoobra");
 var mostraNaoMed = document.querySelector("#mostraNaoMed");//div Pai
 var mostrarMediunica = document.querySelector("#mostrarMediunica");
 var naoMed = document.querySelector("#naoMed"); //div filhas

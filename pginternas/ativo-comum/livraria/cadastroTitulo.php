@@ -11,12 +11,14 @@
     <?php //include ("../../../includes/navegacao.php"); 
           include ("../../../conexao/conexao.php");
           include ("querys.php");
-
+          session_start();
           ?>
     <div class="container">
         <?php  
-          session_start();
-
+          if(isset($_SESSION['msg'])){
+            echo $_SESSION['msg'];
+            unset($_SESSION['msg']);
+        }
         ?>
         <legend class="text-center bg-info text-white">Cadastrando Títulos</legend>
         <form class="container" action="gravarTitulo.php" method="POST" name="tb_titulos">
@@ -63,8 +65,8 @@
             <!-- inicio da interação com a tabela Composição -->
             <div class="col-md-4 bd-highlight">
                 <div class="form-group">
-                    <label class="mb-0 p-0" for="idtipoObra">Tipo da Obra &nbsp &nbsp<span><a href="#"><img src="cadastro.png" alt="" srcset=""></a></span></label>
-                    <select id="idtipoObra" name="idtipoObra" class="form-control">
+                    <label class="mb-0 p-0" for="idtipoobra">Tipo da Obra &nbsp &nbsp<span><a href="#"><img src="cadastro.png" alt="" srcset=""></a></span></label>
+                    <select id="idtipoobra" name="idtipoobra" class="form-control">
                         <option value="">Entre com Tipo</option>
                             <?php while($listaTipo = mysqli_fetch_array($listaTipoSql)){ ?>
                         <option value="<?php echo $listaTipo[0];?>" ><?php echo utf8_encode($listaTipo[1]);?></option>
@@ -77,8 +79,8 @@
                         <label class="mb-0 p-0" for="idpesquisador">Pesquisador &nbsp &nbsp<span><a href="#"><img src="cadastro.png" alt="" srcset=""></a></span></label>
                         <select name="idpesquisador" id="idpesquisador" class="form-control">
                             <option value="">Entre com o Pesquisador</option>
-                            <?php while($listaNaoMedPesq = mysqli_fetch_array($listaNaoMedPesqSql)){ ?>
-                            <option value="<?php echo $listaNaoMedPesq[0];?>"><?php echo utf8_encode($listaNaoMedPesq[1]);?></option>    
+                            <?php while($listanaomediunico = mysqli_fetch_array($naomediunicoSql)){ ?>
+                            <option value="<?php echo $listanaomediunico[1];//captura idtipoobra?>"><?php echo utf8_encode($listanaomediunico[4]);?></option>    
                             <?php } ?>
                         </select>
                     </div>
@@ -88,8 +90,8 @@
                         <label class="mb-0 p-0" for="idpsicografo">Psicógrafo &nbsp &nbsp<span><a href="#"><img src="cadastro.png" alt="" srcset=""></a></span></label>
                         <select name="idpsicografo" id="idpsicografo" class="form-control">
                             <option value="">Entre com o Psicógrafo</option>
-                            <?php while($listaMedPsi = mysqli_fetch_array($listaMedPsiSql)){ ?>
-                            <option value="<?php echo $listaMedPsi[0];?>" ><?php echo utf8_encode($listaMedPsi[1]);?></option>    
+                            <?php while($listamediunica = mysqli_fetch_array($mediunicaSql)){ ?>
+                            <option value="<?php echo $listamediunica[1];//captura idtipoobra?>" ><?php echo utf8_encode($listamediunica[4]);?></option>    
                             <?php } ?>
                         </select>
                     </div>
@@ -97,8 +99,8 @@
                         <label class="mb-0 p-0" for="idautorEspiritual">Espírito Autor &nbsp &nbsp<span><a href="#"><img src="cadastro.png" alt="" srcset=""></a></span></label>
                         <select name="idautorEspiritual" id="idautorEspiritual" class="form-control">
                             <option value="">Entre com o Espírito Autor</option>
-                            <?php while($listaMedAut = mysqli_fetch_array($listaMedAutSql)){ ?>
-                            <option value="<?php echo $listaMedAut[0];?>"><?php echo utf8_encode($listaMedAut[1]);?></option>    
+                            <?php while($listaAut = mysqli_fetch_array($listaAutSql)){ ?>
+                            <option value="<?php echo $listaAut[0];?>"><?php echo utf8_encode($listaAut[1]);?></option>    
                             <?php }  ?>
                         </select>
                     </div>                     

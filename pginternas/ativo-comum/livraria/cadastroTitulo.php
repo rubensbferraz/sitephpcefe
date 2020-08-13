@@ -8,16 +8,17 @@
     <title>Cadastrando Títulos</title>
 </head>
 <body>
-    <?php //include ("../../../includes/navegacao.php"); 
-          include ("../../../conexao/conexao.php");
-          include ("querys.php");
-          session_start();
-          ?>
+    <?php 
+        include ("../../../includes/navegacao.php"); 
+        include ("../../../conexao/conexao.php");
+        include ("querys.php");
+    ?>
     <div class="container">
         <?php  
-          if(isset($_SESSION['msg'])){
-            echo $_SESSION['msg'];
-            unset($_SESSION['msg']);
+            $_SESSION['navegar'] = "titulo";
+            if(isset($_SESSION['msg'])){
+                echo $_SESSION['msg'];
+                unset($_SESSION['msg']);
         }
         ?>
         <legend class="text-center bg-info text-white">Cadastrando Títulos</legend>

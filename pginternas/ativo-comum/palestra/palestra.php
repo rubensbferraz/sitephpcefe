@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-	<?php include ("../../../conexao/conexao.php") ?>
+	<?php 
+		include ("../../../conexao/conexao.php"); 
+	?>
 	<meta http-equiv="Content-Type" content="text/html" charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="../../../css/navegacao.css">
@@ -27,8 +29,10 @@
 	</script>
 </head>
 <body>
-<?php include ("../../../includes/navegacao.php"); ?>
-<section id="palest" class="container">
+<?php include ("../../../includes/navegacao.php"); 
+ 	$_SESSION['navegar'] = "palestra";
+?>
+<section id="palesta" class="container">
 		<form class="form-group" action="ano.php"  method="POST" name="palestra">
 			<div class="row">
 					<legend>Ordenando Escala de Palestras Públicas</legend>

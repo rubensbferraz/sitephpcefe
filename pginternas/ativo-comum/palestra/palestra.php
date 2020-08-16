@@ -2,16 +2,15 @@
 <html lang="pt-br">
 <head>
 	<?php 
-		include ("../../../conexao/conexao.php"); 
-	?>
+		include ("../../../conexao/conexao.php");
+		?>
 	<meta http-equiv="Content-Type" content="text/html" charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="../../../css/navegacao.css">
 	<link rel="stylesheet" href="../../../includes/bootstrap/css/bootstrap.css" type="text/css">
 	<link rel="stylesheet" href="../../../includes/bootstrap/css/bootstrap-responsive.css" type="text/css">
     <title>Cadastrando Palestras</title>
-
-	<script>
+	<script type="text/javascript">
 		$(function() {
 			$("#calendario" ).datepicker({
 				dateFormat: 'yy/mm/dd',
@@ -26,14 +25,17 @@
 				showButtonPanel: true
 			});
 		});
-	</script>
+		</script>
+	<?php 
+		include ("../../../includes/navegacaopalestra.php"); 
+		//session_start();
+		$_SESSION['palestra'] = "palestra";
+		
+	?>
 </head>
 <body>
-<?php include ("../../../includes/navegacao.php"); 
- 	$_SESSION['navegar'] = "palestra";
-?>
-<section id="palesta" class="container">
-		<form class="form-group" action="ano.php"  method="POST" name="palestra">
+		<section class="container">
+		<form class="form-group" action="ano.php"  method="POST" name="palestra" >
 			<div class="row">
 					<legend>Ordenando Escala de Palestras Públicas</legend>
 					<img src="" alt="" srcset="">
@@ -118,6 +120,7 @@ for ($i=0; $i < $linha; $i++) {
 		<form  action="listar.php">
 			<button class="btn btn-success btn-lg float-right" type="submit" >Clique para Atualizar</button>
 		</form>
-	</section> 	
+	</section>
+    <script src="../../../includes/bootstrap/js/jquery-3.5.1.min.js"></script>
 </body>
 </html>

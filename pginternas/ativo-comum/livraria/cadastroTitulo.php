@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    <?php 
+        include ("../../../conexao/conexao.php");
+        include ("../../../includes/navegacaotitulo.php"); 
+        include ("querys.php");
+        //session_start();
+        $_SESSION['titulo'] = "titulo";
+
+    ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../../includes/bootstrap/css/bootstrap.css" type="text/css">
@@ -8,14 +16,8 @@
     <title>Cadastrando Títulos</title>
 </head>
 <body>
-    <?php 
-        include ("../../../includes/navegacao.php"); 
-        include ("../../../conexao/conexao.php");
-        include ("querys.php");
-    ?>
-    <div class="container">
+    <div class="container" id="titulo">
         <?php  
-            $_SESSION['navegar'] = "titulo";
             if(isset($_SESSION['msg'])){
                 echo $_SESSION['msg'];
                 unset($_SESSION['msg']);
@@ -23,6 +25,7 @@
         ?>
         <legend class="text-center bg-info text-white">Cadastrando Títulos</legend>
         <form class="container" action="gravarTitulo.php" method="POST" name="tb_titulos">
+        <input type="hidden" name="navegartitulo" value="<?php $_SESSION['titulo']="titulo" ?>">
         <div class="row">
             <div class="col-md-4 bd-highlight">
                 <div class="form-group">

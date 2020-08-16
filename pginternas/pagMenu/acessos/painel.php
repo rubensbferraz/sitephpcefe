@@ -41,12 +41,15 @@
 		<hr/>
 		<div class="ml-3">
 			<?php
-			$dv = "divulgacao";
+			$ad = "administrar";
 
-				if($libera == $dv){
+				if($libera == $ad){
 					echo "Você é Diretor(a)/Coordenador(a) do - DEDIV - <br/>";
+
 			?>
-				<a href="../../../pginternas/ativo-comum/palestra/palestra.php">Cadastrar Palestras</a>
+				<a name="cadastroPalestra" href="../../../pginternas/ativo-comum/palestra/palestra.php">Cadastrar Palestras</a> <br>
+				<a name="cadastroTitulo" href="../../../pginternas/ativo-comum/livraria/cadastroTitulo.php">Cadastroar Títulos</a>
+				
 			<?php
 			}
 			?>

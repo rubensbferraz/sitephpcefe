@@ -5,7 +5,6 @@ var mostrarMediunica = document.querySelector("#mostrarMediunica");
 var naoMed = document.querySelector("#naoMed"); //div filhas
 var mediunica =document.querySelector(".mediunica");
 
-var palesta = document.querySelector("#palestra");
 //objetos
 
 //funcões

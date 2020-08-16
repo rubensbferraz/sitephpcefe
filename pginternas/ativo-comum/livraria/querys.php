@@ -33,29 +33,8 @@
     $listaPsiSql = mysqli_query($conn, "SELECT psi.id, psi.psicografo FROM tb_psicografo psi;") or die("mysql error:" . $listaPsiSql . "<br>" . mysqli_error($conn));
     $listaPsi = $listaPsiSql->num_rows;
 
+//navegação menu horizontal
 
 
-    //AQUI FINALIZA O TRABALHO COM A TABELA COMPOSIÇÃO
 
-    /*$listaPsiSql = mysqli_query($conn, "SELECT psi.id, psi.psicografo, psi.email, psi.celular, aut.id, aut.espiritoAutor FROM tb_psicografo psi, tb_autorespiritual aut  ;") or die("mysql error:" . mysqli_error($conn)."<hr>\nQuery: $listaPsiqSql");
-    $listaPsi = $listaPsiSql->num_rows;
-
-    $listaAutSql = mysqli_query($conn, "SELECT aut.id, aut.espiritoAutor FROM tb_autorespiritual aut  ;") or die("mysql error:" . mysqli_error($conn)."<hr>\nQuery: $listaAutqSql");
-    $listaAut = $listaAutSql->num_rows;
-
-    $listaCidSql = mysqli_query($conn, "SELECT cid.id, cid.cidade, cid.uf FROM tb_cidade cid  ;") or die("mysql error:" . mysqli_error($conn)."<hr>\nQuery: $listaCidSql");
-    $listaCid = $listaCidSql->num_rows;
-
-    //-----
-    $listaEditoraSql = mysqli_query($conn, "SELECT * FROM tb_editora ed, tb_cidade cid where ed.idcidade=cid.id  ;") or die("mysql error:" . mysqli_error($conn)."<hr>\nQuery: $listaEditoraSql");
-    $listaEditora = $listaEditoraSql->num_rows;
-
-    $listaAutorEspSql = mysqli_query($conn, "SELECT * FROM tb_autorespiritual aut  ;") or die("mysql error:" . mysqli_error($conn)."<hr>\nQuery: $listaAutorEspSql");
-    $listaAutorEsp = $listaAutorEspSql->num_rows;
-
-    $listaPsicografoSql = mysqli_query($conn, "SELECT * FROM tb_psicografo psi  ;") or die("mysql error:" . mysqli_error($conn)."<hr>\nQuery: $listaPsicografoSql");
-    $listaPsicografo = $listaPsicografoSql->num_rows;
-
-    $listaPesquisadorSql = mysqli_query($conn, "SELECT * FROM tb_pesquisador pesq  ;") or die("mysql error:" . mysqli_error($conn)."<hr>\nQuery: $listaPesquisadorSql");
-    $listaPesquisador = $listaPesquisadorSql->num_rows;*/
-?>
+   ?>

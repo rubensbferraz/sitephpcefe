@@ -2,11 +2,10 @@
 <html lang="pt-br">
 <head>
     <?php 
+        ob_start();
         include ("../../../conexao/conexao.php");
         include ("../../../includes/navegacaotitulo.php"); 
         include ("querys.php");
-        //session_start();
-        $_SESSION['titulo'] = "titulo";
 
     ?>
     <meta charset="UTF-8">

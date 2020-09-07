@@ -1,14 +1,9 @@
 <?php 
- session_start();
  $base = 'sitephpcefe';
- ob_start();
+ session_start();
  $titulo = $_SESSION['titulo'] == "titulo";
 
-
-
 ?>
-
-
 
 <nav id="navego" class="navbar navbar-light  row d-inline-block ml-1 p-2";>
   <a class="btn btn-light text-center p-2" href="<?php $conn ?>/<?php echo $base ?>/">Home

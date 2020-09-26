@@ -1,0 +1,11 @@
+{
+    "name": "rubens/sitecefe",
+    "description": "Projeto para identidade virtual da CEFE",
+    "authors": [
+        {
+            "name": "rubferraz",
+            "email": "rubensbferraz@gmail.com"
+        }
+    ],
+    "require": {}
+}

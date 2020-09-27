@@ -81,8 +81,8 @@
 		$linha = mysqli_fetch_array($rs); //echo $linha['diapalestra'];
 		$registros = $rs->num_rows; //echo $registros;
 		//$arrayConsulta = mysqli_fetch_array($rs);
-		$diaPalestra = $linha['diapalestra']; //echo $diaPalestra;
-		$mes = $linha['mespalestra']; //echo $mes;
+		$diaPalestra = $linha['diapalestra'];
+		//echo $diaPalestra;
 
 
 		$m = date('m'); //echo $m;
@@ -98,11 +98,11 @@
 		?>
 			<div class="sexta border border-success p-2 rounded">
 				<?php
-				$smq = "Sexta-Feira";
+				$smq = "sexta";
 				?>
 				<p class="sem text-uppercase"><?php echo strtoupper($sem) ?> / Dia:&nbsp &nbsp<?php echo $dd['0']; ?></p>
-				<p class="ortD">Orador: <?php echo utf8_encode($palestrante); ?> </p>
-				<p class="tD">Tema: <?php echo utf8_decode($tema); ?></p>
+				<p class="ortD">Orador: <?php echo utf8_encode($orador); ?> </p>
+				<p class="tD">Tema: <?php echo utf8_encode($tema); ?></p>
 			<?php
 		} else {
 			?>

@@ -9,7 +9,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="../../../css/navegacao.css">
 	<link rel="stylesheet" href="../../../includes/bootstrap/css/bootstrap.css" type="text/css">
-	<link rel="stylesheet" href="../../../includes/bootstrap/css/bootstrap-responsive.css" type="text/css">
 	<title>Cadastrando Palestras</title>
 	<script type="text/javascript">
 		$(function() {
@@ -28,9 +27,9 @@
 		});
 	</script>
 	<?php
-	include("../../../includes/navegacaopalestra.php");
+	//include("../../../includes/navegacaopalestra.php");
 	//session_start();
-	$_SESSION['palestra'] = "palestra";
+	//$_SESSION['palestra'] = "palestra";
 
 	?>
 </head>
@@ -109,7 +108,7 @@
 					<tbody>
 						<tr>
 							<td><?php echo $escalaMes['dataPalestra']; ?></td>
-							<td><?php echo $escalaMes['Semana']; ?></td>
+							<td><?php echo $escalaMes['semanaPalestra']; ?></td>
 							<td><?php echo utf8_decode($escalaMes['oradorPalestra']); ?></td>
 							<td><?php echo utf8_decode($escalaMes['temaPalestra']); ?></td>
 							<td><?php echo utf8_decode($escalaMes['diretorPalestra']); ?></td>

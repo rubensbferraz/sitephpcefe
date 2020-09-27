@@ -77,8 +77,8 @@
 	<div id="escala" class="">
 		<?php
 		$mes = date('m');
-		$query = "SELECT DATE_FORMAT(DataPalestra, '%d') as diapalestra, DATE_FORMAT(DataPalestra, '%m') as mespalestra, IdPalestra, Palestrante, TemaPalestra, Semana, DATE_FORMAT(DataPalestra, '%d/%m/%Y') as dataPalestra
-			FROM palestra where Semana='domingo' AND DATE_FORMAT(DataPalestra, '%m')=$mes order by diapalestra desc";
+		$query = "SELECT DATE_FORMAT(dataPalestra, '%d') as diapalestra, DATE_FORMAT(dataPalestra, '%m') as mespalestra, idPalestra, oradorPalestra, temaPalestra, semanaPalestra, DATE_FORMAT(dataPalestra, '%d/%m/%Y') as dataPalestra
+			FROM tb_palestra where semanaPalestra='domingo' AND DATE_FORMAT(dataPalestra, '%m')=$mes order by diapalestra desc";
 		$rs = mysqli_query($conn, $query) or die(mysqli_error($conn));
 		$linha = mysqli_fetch_array($rs); //echo $linha['diapalestra'];
 		$registros = $rs->num_rows; //echo $registros;

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
 	<?php
@@ -27,7 +27,7 @@
 		});
 	</script>
 	<?php
-	//include("../../../includes/navegacaopalestra.php");
+	include("../../../includes/navegacaopalestra.php");
 	//session_start();
 	//$_SESSION['palestra'] = "palestra";
 
@@ -99,19 +99,22 @@
 			for ($i = 0; $i < $linha; $i++) {
 				$escalaMes = mysqli_fetch_array($sqlBusca);
 				$vid = $escalaMes['idPalestra'];
-				$mes = $escalaMes['dataPalestra'];
-				$mm = explode("-", $mes);
+				$dataPalestra = $escalaMes['dataPalestra'];
+				$diretorPalestra = utf8_encode($escalaMes['diretorPalestra']);
+				$oradorPalestra = utf8_encode($escalaMes['oradorPalestra']);
+				$temaPalestra = utf8_encode($escalaMes['temaPalestra']);
+				$mm = explode("-", $dataPalestra);
 				$atual = $mm[1];
 
 				if ($m == $atual) {
 			?>
 					<tbody>
 						<tr>
-							<td><?php echo $escalaMes['dataPalestra']; ?></td>
+							<td><?php echo $dataPalestra; ?></td>
 							<td><?php echo $escalaMes['semanaPalestra']; ?></td>
-							<td><?php echo utf8_decode($escalaMes['oradorPalestra']); ?></td>
-							<td><?php echo utf8_decode($escalaMes['temaPalestra']); ?></td>
-							<td><?php echo utf8_decode($escalaMes['diretorPalestra']); ?></td>
+							<td><?php echo utf8_decode($oradorPalestra); ?></td>
+							<td><?php echo utf8_decode($temaPalestra); ?></td>
+							<td><?php echo utf8_decode($diretorPalestra); ?></td>
 					<?php
 				}
 			}

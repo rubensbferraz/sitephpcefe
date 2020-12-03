@@ -6,21 +6,21 @@
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="includes/imagens/atendimentofraterno1.png" class="d-block w-100">
+      <img src="img/ImgCarousel/atendimentofraterno1.png" class="d-block w-100">
       <div class="carousel-caption d-none d-md-block text-dark">
         <h2>Assistência Espíritual</h2>
         <p class="lead">Em nossa Casa, é um local acolhedor. Venha acolher alguém.</p>
       </div>
     </div>
     <div class="carousel-item">
-      <img src="includes/imagens/estadodegraca.png" class="d-block w-100" alt="...">
+      <img src="img/ImgCarousel/estadodegraca.png" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block text-dark">
         <h2>Sua paz, é a paz do mundo.</h2>
         <p class="lead">O nosso estado espiritual reflete em todo o nosso derredor.</p>
       </div>
     </div>
     <div class="carousel-item">
-      <img src="includes/imagens/uniao.png" class="d-block w-100" alt="...">
+      <img src="img/ImgCarousel/uniao.png" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block text-dark">
         <h2>União de todos</h2>
         <p class="lead">Somos elos de uma corrente, nossa Fraternidade é o sustentáculo de nossa união.</p>

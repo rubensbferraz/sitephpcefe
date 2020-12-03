@@ -3,7 +3,7 @@
 
 <head>
 	<?php
-	include("../../../conexao/conexao.php");
+	include("config/conexao.php");
 	?>
 	<meta http-equiv="Content-Type" content="text/html" charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,7 +27,7 @@
 		});
 	</script>
 	<?php
-	include("../../../includes/navegacaopalestra.php");
+	include("includes/navegacaopalestra.php");
 	//session_start();
 	//$_SESSION['palestra'] = "palestra";
 
@@ -126,7 +126,7 @@
 			<button class="btn btn-success btn-lg float-right" type="submit">Clique para Atualizar</button>
 		</form>
 	</section>
-	<script src="../../../includes/bootstrap/js/jquery-3.5.1.min.js"></script>
+	<script src="includes/bootstrap/js/jquery-3.5.1.min.js"></script>
 </body>
 
 </html>

@@ -1,6 +1,6 @@
 <?php
 
-namespace Pginternas\AtivoComun\Traits;
+namespace Trits;
 
 trait TraitUrlParser
 {

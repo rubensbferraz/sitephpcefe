@@ -8,26 +8,26 @@
     <link rel="stylesheet" type="text/css" href="css/cefe.css">
     <link rel="stylesheet" type="text/css" href="css/menu.css">
     <link rel="stylesheet" type="text/css" href="css/carousel.css">
-    <link rel="stylesheet" href="src/includes/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="includes/bootstrap/css/bootstrap.css">
 </head>
 
 <body>
     <div class="cabeca">
         <div class="logo">
-            <img src="app/view/cabeca/imagens/imgcabecalho.png" alt="" srcset="">
+            <img src="img/ImgHeader/imgcabecalho.png" alt="" srcset="">
         </div>
         <div class="portchico rounded float-right d-none d-md-block">
-            <img src="app/view/cabeca/imagens/bustoChico.png" alt="" srcset="">
+            <img src="img/ImgHeader/bustoChico.png" alt="" srcset="">
         </div>
         <div class="frasechico d-none d-md-block">
             <p class="lead">"Deixe algum sinal de alegria onde passe."</br><span>Chico Xavier</span></p>
         </div>
         <div class="assinatura d-none d-lg-block">
-            <img src="app/view/cabeca/imagens/assinatura.png" alt="" srcset="">
+            <img src="img/ImgHeader/assinatura.png" alt="" srcset="">
         </div>
     </div>
     <div class="menu">
-        <?php include("src/includes/menu.php"); ?>
+        <?php include("includes/menu.php"); ?>
     </div>
 </body>
 

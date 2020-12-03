@@ -1,11 +1,13 @@
 <?php
 
-namespace Pginternas\AtivoComun\Classes;
+namespace Classes\servico;
+
+use Trits\TraitUrlParser;
 
 class ClassBreadcrumb
 {
 
-    use \Pginternas\AtivoComun\Traits\TraitUrlParser;
+    use TraitUrlParser;
 
     #Crias os breadcrumbs do site
     public function addBreadcrumb()

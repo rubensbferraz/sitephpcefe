@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <div class="cabeca">
+    <div class="cabeca container-fluid">
         <div class="logo">
             <img src="img/ImgHeader/imgcabecalho.png" alt="" srcset="">
         </div>

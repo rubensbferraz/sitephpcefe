@@ -16,9 +16,9 @@
 }
 .cabeca{
     display: block;
-    background-image: url("../cabeca/imagens/plantacaoflores2.png");
+    background-image: url('/sitephpcefe/img/ImgHeader/plantacaoflores2.png');
     min-height: 150px;
-    border: solid 1px #cccccc;
+    border: solid 1px #F8F9FA;
 }
 .portchico{ 
     float: right; 
@@ -26,7 +26,7 @@
 }
 .portchico img{
     width:120px;
-    height: 149px;
+    height: 147px;
 }
 .logo{
     float: left;

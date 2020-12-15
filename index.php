@@ -3,7 +3,7 @@
 
 <head>
     <?php
-    include("config/conexao.php");
+    include("Config/conexao.php");
     include("config/config.php");
     ?>
 
@@ -20,7 +20,7 @@
 <body>
     <div class="corpo">
         <div class="menu">
-            <?php include("pages/cabeca/cabecalho.php"); ?>
+            <?php include("pages/header/cabecalho.php"); ?>
         </div>
         <!-- incluindo o menu da pasta Includes -->
         <section>
@@ -29,13 +29,13 @@
             </div>
         </section>
         <div class="palestra">
-            <?php include("pages/pginternas/AtivoComum/palestra/palestraIndex.php"); ?>
+            <?php include("pages/main/palestra/palestraIndex.php"); ?>
         </div>
         <div class="internoPr">
-            <?php include("pages/pginternas/divulgacao/internoPrIndex.php"); ?>
+            <?php include("pages/main/divulgacao/internoPrIndex.php"); ?>
         </div>
         <div class="internoSg">
-            <?php include("pages/pginternas/divulgacao/internoSgIndex.php"); ?>
+            <?php include("pages/main/divulgacao/internoSgIndex.php"); ?>
         </div>
         <div class="Footer">
             <div class="container">

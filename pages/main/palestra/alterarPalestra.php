@@ -2,7 +2,7 @@
 <html lang="pt-br">
 
 <head>
-	<?php include "../../../conexao/conexao.php" ?>
+	<?php include "../../../config/conexao.php" ?>
 	<?php ini_set('default_charset', 'UTF-8'); ?>
 	<title>Ordenando as Palestras</title>
 	<meta charset="utf-8">

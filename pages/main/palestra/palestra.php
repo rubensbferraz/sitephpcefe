@@ -3,35 +3,14 @@
 
 <head>
 	<?php
-	include("config/conexao.php");
+	include("../../../config/conexao.php");
+	include("Breadcrumb.php");
 	?>
 	<meta http-equiv="Content-Type" content="text/html" charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="../../../css/navegacao.css">
 	<link rel="stylesheet" href="../../../includes/bootstrap/css/bootstrap.css" type="text/css">
 	<title>Cadastrando Palestras</title>
-	<script type="text/javascript">
-		$(function() {
-			$("#calendario").datepicker({
-				dateFormat: 'yy/mm/dd',
-				dayNames: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado', 'Domingo'],
-				dayNamesMin: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S', 'D'],
-				dayNamesShort: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb', 'Dom'],
-				monthNames: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
-				monthNamesShort: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
-				showOn: "button",
-				buttonImage: "calendario.png",
-				buttonImageOnly: true,
-				showButtonPanel: true
-			});
-		});
-	</script>
-	<?php
-	include("includes/navegacaopalestra.php");
-	//session_start();
-	//$_SESSION['palestra'] = "palestra";
 
-	?>
 </head>
 
 <body>
@@ -74,7 +53,7 @@
 	<section id="folha" class="container">
 		<?php
 
-		$sqlBusca = mysqli_query($conn, "SELECT * FROM `tb_palestra` WHERE 1 ") or die("mysql error:" . mysqli_error($conn) . "<hr>\nQuery: $sqlBusca");
+		$sqlBusca = mysqli_query($conn, "SELECT * FROM tb_palestra WHERE 1 ") or die("mysql error:" . mysqli_error($conn) . "<hr>\nQuery: $sqlBusca");
 		$linha = $sqlBusca->num_rows;
 
 		?>
@@ -126,7 +105,7 @@
 			<button class="btn btn-success btn-lg float-right" type="submit">Clique para Atualizar</button>
 		</form>
 	</section>
-	<script src="includes/bootstrap/js/jquery-3.5.1.min.js"></script>
+	<script src="../../../includes/bootstrap/js/jquery-3.5.1.min.js"></script>
 </body>
 
 </html>

@@ -13,7 +13,7 @@
             <div class="col-md col-sm card">
                 <div class="">
                     <div class="p-2">
-                        <img class="card-img-top" src="pginternas/assistencia/imagens/jesusCriancas.png" alt="" srcset="">
+                        <img class="card-img-top" src="<?php echo DIRIMG . "ImgHome/jesusCriancas.png" ;?>" alt="" srcset="">
                         <p class="text-justify">
                         Nossa assistência primeira?<br>
                         assistência primeira, assistência primeira, assistência primeira, assistência primeira, assistência primeira, assistência primeira, assistência primeira, assistência primeira, assistência primeira, assistência primeira, assistência primeira, assistência primeira, assistência primeira, assistência primeira, assistência primeira.
@@ -24,7 +24,7 @@
             <div class="col-md col-sm card">
                 <div class="">
                     <div class="col p-2">
-                        <img class="card-img-top" src="pginternas/assistencia/imagens/assistencia2.png" alt="" srcset="">
+                        <img class="card-img-top" src="<?php echo DIRIMG . "ImgHome/assistencia2.png" ;?>" alt="" srcset="">
                         <p class="text-justify">Nossa assistência segunda?<br>
                         assistência segunda, assistência segunda, assistência segunda, assistência segunda, assistência segunda, assistência segunda, assistência segunda, assistência segunda, assistência segunda, assistência segunda, assistência segunda, assistência segunda, assistência segunda, assistência segunda, assistência segunda.
                         </p>
@@ -35,7 +35,7 @@
                 <div class="">
                     <div class="col p-2">
                         <p class="text-justify">
-                        <img class="card-img-top" src="pginternas/assistencia/imagens/assistencia3.png" alt="" srcset="">
+                        <img class="card-img-top" src="<?php echo DIRIMG . "ImgHome/assistencia3.png" ;?>" alt="" srcset="">
                         Nossa assistência terceira?<br>
                         assistência terceira, assistência terceira, assistência terceira, assistência terceira, assistência terceira, assistência terceira, assistência terceira, assistência terceira, assistência terceira, assistência terceira, assistência terceira, assistência terceira, assistência terceira, assistência terceira, assistência terceira.
                         </p>

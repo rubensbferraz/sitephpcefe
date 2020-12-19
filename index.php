@@ -4,7 +4,7 @@
 <head>
     <?php
     include("Config/conexao.php");
-    include("config/config.php");
+    include("Config/config.php");
     ?>
 
     <meta charset="UTF-8">
@@ -12,8 +12,8 @@
     <link rel="stylesheet" type="text/css" href="css/cefe.css">
     <link rel="stylesheet" type="text/css" href="css/menu.css">
     <link rel="stylesheet" type="text/css" href="css/carousel.css">
-    <link rel="stylesheet" type="text/css" href="pages/pginternas/ativo-comum/palestra/visualSemana.css">
-    <link rel="stylesheet" type="text/css" href="includes/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="pages/main/palestra/visualSemana.css">
+    <link rel="stylesheet" type="text/css" href="Includes/bootstrap/css/bootstrap.min.css">
     <title>Casa Espírita Fraternidade Emmanuel</title>
 </head>
 
@@ -25,7 +25,7 @@
         <!-- incluindo o menu da pasta Includes -->
         <section>
             <div class="carousel">
-                <?php include("includes/carousel.php"); ?>
+                <?php include("Includes/carousel.php"); ?>
             </div>
         </section>
         <div class="palestra">
@@ -41,7 +41,7 @@
             <div class="container">
                 <div class=" row footer col-md col-sm">
                     <div class="col">
-                        <img src="<?PHP echo DIRIMG . "/ImgRodape/criancasAbracadas.jpg"; ?>" alt="" srcset="">
+                        <img src="<?PHP echo DIRIMG . "ImgRodape/criancasAbracadas.jpg"; ?>" alt="" srcset="">
                     </div>
                     <div class="col-8">
                         <h1 class="texto">Deus, Cristo e Caridade</h1>
@@ -57,9 +57,9 @@
         </div>
     </div>
 
-
-    <script src="includes/bootstrap/js/jquery-3.5.1.min.js"></script>
-    <script src="includes/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 
 </html>

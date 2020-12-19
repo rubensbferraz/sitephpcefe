@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="css/cefe.css">
     <link rel="stylesheet" type="text/css" href="css/menu.css">
     <link rel="stylesheet" type="text/css" href="css/carousel.css">
-    <link rel="stylesheet" href="includes/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="Includes/bootstrap/css/bootstrap.min.css">
 </head>
 
 <body>
@@ -27,7 +27,7 @@
         </div>
     </div>
     <div class="menu">
-        <?php include("includes/menu.php"); ?>
+        <?php include("Includes/menu.php"); ?>
     </div>
 </body>
 

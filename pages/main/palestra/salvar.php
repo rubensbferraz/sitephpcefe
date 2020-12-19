@@ -8,7 +8,7 @@
 
 	<body>
 	    <?php
-        include "../../../conexao/conexao.php";
+        include "../../../Config/conexao.php";
         ?>
 	    <?php ini_set('default_charset', 'utf-8'); ?>
 

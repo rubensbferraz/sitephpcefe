@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Includes/bootstrap/css/bootstrap.min.css">
+</head>
+<body>
 <div class="container-fluid">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,9 +28,9 @@
                     <a class="nav-link dropdown-toggle" href="#" id="centroespirita" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">CENTRO ESPÍRITA</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="<?php echo DIRPAGE ."pages/main/palestra/palestra.php" ?>">Palestra</a>
-                        <a class="dropdown-item" href="/pages/main/livraria/cadastroTitulo.php">Livraria</a>
+                        <a class="dropdown-item" href="pages/main/livraria/cadastroTitulo.php">Livraria</a>
                         <a class="dropdown-item" href="#">Biblioteca</a>
-                        <a class="dropdown-item" href="/pages/main/pagMenu/acessos/admin.php">Administração</a>
+                        <a class="dropdown-item" href="pages/main/pagMenu/acessos/admin.php">Administração</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="atividade" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ATIVIDADE</a>
@@ -49,3 +57,6 @@
         </div>
     </nav>
 </div>
+
+</body>
+</html>

@@ -8,14 +8,15 @@
 	?>
 	<meta http-equiv="Content-Type" content="text/html" charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="../../../includes/bootstrap/css/bootstrap.css" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="../../../includes/bootstrap/css/bootstrap.min.css" type="text/css">
 	<title>Cadastrando Palestras</title>
 
 </head>
 
 <body>
 	<section class="container">
-		<form class="form-group" action="ano.php" method="POST" name="palestra">
+		<form class="form-group" action="cadastroPalestra.php" method="POST">
 			<div class="row">
 				<legend>Ordenando Escala de Palestras Públicas</legend>
 				<img src="" alt="" srcset="">
@@ -51,59 +52,7 @@
 		</form>
 	</section>
 	<section id="folha" class="container">
-		<?php
-
-		$sqlBusca = mysqli_query($conn, "SELECT * FROM tb_palestra WHERE 1 ") or die("mysql error:" . mysqli_error($conn) . "<hr>\nQuery: $sqlBusca");
-		$linha = $sqlBusca->num_rows;
-
-		?>
-
-		<legend>Escala de Oradores para o mês "<?php $my = date('M-Y');
-												echo $my; ?>"</legend>
-
-		<table class="table table-striped  table-bordered table-hover table-condensad">
-			<thead>
-				<tr class="warning">
-					<th>Data</th>
-					<th>Semana</th>
-					<th>Palestrante Orador</th>
-					<th>Tema</th>
-					<th>Diretor</th>
-				</tr>
-			</thead>
-			<?php
-
-			$m = date('m');
-
-			for ($i = 0; $i < $linha; $i++) {
-				$escalaMes = mysqli_fetch_array($sqlBusca);
-				$vid = $escalaMes['idPalestra'];
-				$dataPalestra = $escalaMes['dataPalestra'];
-				$diretorPalestra = utf8_encode($escalaMes['diretorPalestra']);
-				$oradorPalestra = utf8_encode($escalaMes['oradorPalestra']);
-				$temaPalestra = utf8_encode($escalaMes['temaPalestra']);
-				$mm = explode("-", $dataPalestra);
-				$atual = $mm[1];
-
-				if ($m == $atual) {
-			?>
-					<tbody>
-						<tr>
-							<td><?php echo $dataPalestra; ?></td>
-							<td><?php echo $escalaMes['semanaPalestra']; ?></td>
-							<td><?php echo utf8_decode($oradorPalestra); ?></td>
-							<td><?php echo utf8_decode($temaPalestra); ?></td>
-							<td><?php echo utf8_decode($diretorPalestra); ?></td>
-					<?php
-				}
-			}
-					?>
-						</tr>
-					</tbody>
-		</table>
-		<form action="listar.php">
-			<button class="btn btn-success btn-lg float-right" type="submit">Clique para Atualizar</button>
-		</form>
+	<?php include ("listarPalestra.php"); ?>
 	</section>
 	<script src="../../../includes/bootstrap/js/jquery-3.5.1.min.js"></script>
 </body>

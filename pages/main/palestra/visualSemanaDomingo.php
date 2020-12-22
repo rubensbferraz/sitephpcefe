@@ -3,9 +3,9 @@
 		$meses = array (1 => "Janeiro", 2 => "Fevereiro", 3 => "Março", 4 => "Abril", 5 => "Maio", 6 => "Junho", 7 => "Julho", 8 => "Agosto", 9 => "Setembro", 10 => "Outubro", 11 => "Novembro", 12 => "Dezembro");
 		$diasdasemana = array (1 => "Segunda-Feira",2 => "Terça-Feira",3 => "Quarta-Feira",4 => "Quinta-Feira",5 => "Sexta-Feira",6 => "Sábado",0 => "Domingo");
 		//Seleciona dados do Banco de dados
-		$query = mysqli_query($conn, "SELECT date_format(dataPalestra, '%d-%m-%Y') as DataPalestra, oradorPalestra, temaPalestra, diretorPalestra, semanaPalestra FROM tb_palestra where semanaPalestra='domingo'");
-		//$listaDados = mysqli_query($conn, $query);//var_dump($listaDados);
-		$registros = $query->num_rows; //echo $registros;
+		$query = "SELECT date_format(dataPalestra, '%d-%m-%Y') as DataPalestra, oradorPalestra, temaPalestra, diretorPalestra, semanaPalestra FROM tb_palestra where semanaPalestra='domingo'";
+		$listaDados = mysqli_query($conn, $query);//var_dump($listaDados);
+		$registros = $listaDados->num_rows; //echo $registros;
 
 		$variavel = date("d/m/Y");
 		$variavel = str_replace('/','-',$variavel);
@@ -28,7 +28,7 @@
 		$diadasemana = $hoje["wday"]; //captura o número correspondente da semana na data da $variavel
 		$nomediadasemana = $diasdasemana[$diadasemana];//echo $nomediadasemana;//captura o nome da semana na data da $variavel
 		//echo "$nomediadasemana, $dia de $nomemes de $ano";
-	while ($dadosQuery = mysqli_fetch_array($query)) {
+	while ($dadosQuery = mysqli_fetch_array($listaDados)) {
 		$dtPalestra = explode('-', $dadosQuery['DataPalestra']);
 		if ($dtPalestra[1]==$mes) {
 			if($dtPalestra[0] >= $dia){

@@ -1,6 +1,7 @@
 <?php
 #Definindo a porta
 #Arquivos diretórios raizes
+//$PastaInterna = "sitephpcefe/";
 $PastaInterna = "sitephpcefe/";
 define('DIRPAGE', "http://{$_SERVER['HTTP_HOST']}/{$PastaInterna}");
 if (substr($_SERVER['DOCUMENT_ROOT'], -1) == '/') {
@@ -13,6 +14,9 @@ if (substr($_SERVER['DOCUMENT_ROOT'], -1) == '/') {
 define('DIRIMG', DIRPAGE . 'img/');
 define('DIRCSS', DIRPAGE . 'css/');
 define('DIRJS', DIRPAGE . 'js/');
+define('DIRCONFIG', DIRPAGE . 'Config/');
+define('DIRINCLUDE', DIRPAGE . 'Includes/');
+define('DIRPAGES', DIRPAGE . 'pages/');
 
 #Acesso ao banco de dados
 define('HOST', "localhost");

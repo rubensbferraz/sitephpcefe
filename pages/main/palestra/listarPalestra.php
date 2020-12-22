@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br" xml:lang="pt-br">
+<html lang="pt-BR">
 
 <head>
 	<?php include "../../../Config/conexao.php" ?>
@@ -51,9 +51,9 @@
 						<tbody>
 							<tr>
 								<td><?php echo $dataPalestra; ?></td>
-								<td><?php echo $orador; ?></td>
-								<td charset="utf8"><?php echo $temaPalestra; ?></td>
-								<td><?php echo $diretor; ?></td>
+								<td><?php echo utf8_encode($orador); ?></td>
+								<td><?php echo utf8_encode($temaPalestra); ?></td>
+								<td><?php echo utf8_encode($diretor); ?></td>
 								<td><button class="btn btn-btn-sucess" name="atualizar" ?><a href="alterarPalestra.php?<?php echo 'idPalestra'; ?>=<?php echo $vid; ?>">Atualizar</a> </button></td>
 							</tr>
 						</tbody>
@@ -96,7 +96,7 @@
 							<tr>
 								<td><?php echo $dataSex; ?></td>
 								<td><?php echo $oradorSex; ?></td>
-								<td charset="utf8"><?php echo $temaSex; ?></td>
+								<td><?php echo $temaSex; ?></td>
 								<td><?php echo $diretorSex; ?></td>
 								<td><button class="btn btn-btn-sucess" name="atualizar" ?><a href="alterarPalestra.php?<?php echo 'idPalestra'; ?>=<?php echo $vidSex; ?>">Atualizar</a> </button></td>
 							</tr>

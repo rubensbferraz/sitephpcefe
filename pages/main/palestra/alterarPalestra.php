@@ -2,12 +2,12 @@
 <html lang="pt-br">
 
 <head>
-	<?php include "../../../config/conexao.php" ?>
+	<?php include "../../../Config/conexao.php" ?>
 	<?php ini_set('default_charset', 'UTF-8'); ?>
 	<title>Ordenando as Palestras</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="../../../includes/bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" href="../../../Includes/bootstrap/css/bootstrap.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
 	<script>
@@ -38,7 +38,7 @@
 	$semana = $_GET['semana']['quarta'];
 	$semana = $_GET['semana']['domingo'];
 */
-	$sql_update = mysqli_query($conn, "SELECT * from `tb_palestra` where idPalestra=$id") or die("mysql error:" . mysqli_error($conn) . "<hr><br>Query: $sql_update");
+	$sql_update = mysqli_query($conn, "SELECT * from tb_palestra where idPalestra=$id") or die("mysql error:" . mysqli_error($conn) . "<hr><br>Query: $sql_update");
 
 	while ($dados = mysqli_fetch_array($sql_update)) {
 		$vid = 	$dados['idPalestra'];

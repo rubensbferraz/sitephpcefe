@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 	<?php
-		include "../../../conexao/conexao.php";
+	
+		include '../../../../Config/conexao.php';
+		
 	?>
 <head>
 	<meta charset="utf-8">
@@ -16,7 +18,7 @@
 			}
 
 			function loginfailed(){
-				setTimeout("window.location='index.html'",3000);
+				setTimeout("window.location='index.php'",3000);
 			}
 		</script>
 
@@ -26,7 +28,7 @@
 		$nome = $_POST['nomeAdm'];
 		$senha = $_POST['senhaAdm'];
 
-		$sql = mysqli_query($conn, "SELECT * FROM adm WHERE nomeAdm = '$nome' and senhaAdm='$senha'");
+		$sql = mysqli_query($conn, "SELECT * FROM tb_adm WHERE nomeAdm = '$nome' and senhaAdm='$senha'");
 		$row = mysqli_num_rows($sql);
 
 

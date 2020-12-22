@@ -3,14 +3,13 @@
 <head>
     <?php 
         ob_start();
-        include ("../../../conexao/conexao.php");
-        include ("../../../includes/navegacaotitulo.php"); 
+        include ("../../../Config/conexao.php"); 
         include ("querys.php");
 
     ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../../includes/bootstrap/css/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="../../../Includes/bootstrap/css/bootstrap.css" type="text/css">
     <link rel="stylesheet" href="../../../css/livraria.css"> 
     <title>Cadastrando Títulos</title>
 </head>
@@ -21,6 +20,7 @@
                 echo $_SESSION['msg'];
                 unset($_SESSION['msg']);
         }
+        include("Breadcrumb.php");
         ?>
         <legend class="text-center bg-info text-white">Cadastrando Títulos</legend>
         <form class="container" action="gravarTitulo.php" method="POST" name="tb_titulos">
@@ -59,7 +59,7 @@
                     <select name="ideditora" class="form-control" id="ideditora">
                         <option value="">Entre com a Editora</option>
                     <?php while($listaEd = mysqli_fetch_array($listaEdSql)){ ?>
-                        <option value="<?php echo $listaEd[0];?>" ><?php echo utf8_encode($listaEd[1]);?></option>
+                        <option value="<?php echo $listaEd[0];?>" ><?php echo $listaEd[1];?></option>
                     <?php }?>
                     </select>
                 </div>                                          
@@ -72,7 +72,7 @@
                     <select id="idtipoobra" name="idtipoobra" class="form-control">
                         <option value="">Entre com Tipo</option>
                             <?php while($listaTipo = mysqli_fetch_array($listaTipoSql)){ ?>
-                        <option value="<?php echo $listaTipo[0];?>" ><?php echo utf8_encode($listaTipo[1]);?></option>
+                        <option value="<?php echo $listaTipo[0];?>" ><?php echo $listaTipo[1];?></option>
 
                     <?php }?>
                     </select>
@@ -94,7 +94,7 @@
                         <select name="idpsicografo" id="idpsicografo" class="form-control">
                             <option value="">Entre com o Psicógrafo</option>
                             <?php while($listamediunica = mysqli_fetch_array($mediunicaSql)){ ?>
-                            <option value="<?php echo $listamediunica[1];//captura idtipoobra?>" ><?php echo utf8_encode($listamediunica[4]);?></option>    
+                            <option value="<?php echo $listamediunica[1];//captura idtipoobra?>" ><?php echo $listamediunica[4];?></option>    
                             <?php } ?>
                         </select>
                     </div>
@@ -103,7 +103,7 @@
                         <select name="idautorEspiritual" id="idautorEspiritual" class="form-control">
                             <option value="">Entre com o Espírito Autor</option>
                             <?php while($listaAut = mysqli_fetch_array($listaAutSql)){ ?>
-                            <option value="<?php echo $listaAut[0];?>"><?php echo utf8_encode($listaAut[1]);?></option>    
+                            <option value="<?php echo $listaAut[0];?>"><?php echo $listaAut[1];?></option>    
                             <?php }  ?>
                         </select>
                     </div>                     
@@ -115,15 +115,14 @@
         </div>
             <div class=" text-right mr-2 mb-2">
                 <button class="btn btn-info" type="submit" name="btncadastrar">Cadastrar</button>
-                <button class="btn btn-info" type="submit" src="listarTitulos.php" name="listar">Listar</button>
+                <a class="btn btn-info" href="listarTitulos.php">Listar</a>
             </div>
 
         </form>
         <legend class="text-center bg-info text-white">
-            <span class="d-inline-block p-2 small">Você está no Sistema de Cadastro de Titulos -&nbsp<?php include ('../../../includes/boasvindas.php'); ?>&nbspdata de hoje:&nbsp<?php echo date('d/m/Y') ?></span>
+            <span class="d-inline-block p-2 small">Você está no Sistema de Cadastro de Titulos -&nbsp<?php include ('../../../Includes/boasvindas.php'); ?>&nbspEstamos em:&nbsp<?php echo date('d/m/Y') ?></span>
         </legend>
     </div>
-    <script src="../../../includes/bootstrap/js/javascript.js"></script>
-    <script src="../../../includes/bootstrap/js/jquery-3.5.1.min.js"></script>
+    <script src="../../../js/jquery/jquery-3.5.1.min.js"></script>
 </body>
 </html>

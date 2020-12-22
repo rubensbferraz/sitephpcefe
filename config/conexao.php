@@ -11,38 +11,35 @@
     #Maquina servidor Linux Localweb HM9251
     #ftp.cefeemmanuel.com.br
     #cefeemmanuel1
-    /*
-    $servidor   = '179.188.16.98';
+/*
+    $servidor   = 'mysql01.cefeemmanuel1.hospedagemdesites.ws';
     $usuario    = 'cefeemmanuel1';
     $pass       = 'cefe123';
-    $banco      = 'cefeemmanuel1';
-	
+    $banco      = 'cefeemmanuel1';*/
+/*	
     $servidor   = '187.45.196.244';
     $usuario    = 'cefeemmanuel';
     $pass       = 'cefe123';
-    $banco      = 'cefeemmanuel';
-*/
-    /*
-    $servidor   = '187.45.196.186';
-    $usuario    = 'provacefe1';
-    $pass       = 'cefe12345';
-    $banco      = 'provacefe1';
+    $banco      = 'cefeemmanuel';*/
 
-*/
-    $servidor   = 'localhost';
-    $usuario    = 'root';
-    $pass       = 'crbf';
-    $banco      = 'cefeemmanuel1';
+/*
+    $servidor   = "provacefe1.mysql.dbaas.com.br";
+    $usuario    = "provacefe1";
+    $pass       = "cefe12345";
+    $banco      = "provacefe1";*/
+
+
+    $servidor   = "localhost";
+    $usuario    = "root";
+    $pass       = "crbf";
+    $banco      = "cefeemmanuel1";
 
     $conn = mysqli_connect($servidor, $usuario, $pass, $banco);
 
     if (!$conn) {
-        die("ERROR ao conectar ao banco de dados " . mysqli_error($conn));
-    }/*else{
-                echo "Você esta conectado  <br> ";
-                echo "$servidor <br>"; 
-            }*/
-
+        die("Not connected : " . mysqli_error($conn));
+    }
+    
     ?>
 
 </body>

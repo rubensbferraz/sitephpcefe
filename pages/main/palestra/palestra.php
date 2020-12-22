@@ -3,13 +3,13 @@
 
 <head>
 	<?php
-	include("../../../config/conexao.php");
+	include("../../../Config/conexao.php");
 	include("Breadcrumb.php");
 	?>
 	<meta http-equiv="Content-Type" content="text/html" charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="../../../includes/bootstrap/css/bootstrap.min.css" type="text/css">
+	<link rel="stylesheet" href="../../../Includes/bootstrap/css/bootstrap.min.css" type="text/css">
 	<title>Cadastrando Palestras</title>
 
 </head>
@@ -54,7 +54,7 @@
 	<section id="folha" class="container">
 	<?php include ("listarPalestra.php"); ?>
 	</section>
-	<script src="../../../includes/bootstrap/js/jquery-3.5.1.min.js"></script>
+	<script src="../../../Includes/bootstrap/js/jquery-3.5.1.min.js"></script>
 </body>
 
 </html>

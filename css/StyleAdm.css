@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,500&display=swap');
+body{
+	margin: 0%;
+	padding: 0%;
+	font-family: 'Roboto', sans-serif;
+	font-size: small;
+}
+
+a {
+	text-decoration: none;
+}
+
+#permissao{
+	width: 600px;
+	margin:auto;
+}
+
+#permissao .for{
+	width: 600px;
+}
+#permissao fieldset{
+	height: 85px;
+	font:14px Oswald;
+	padding: 5px;
+	text-align: left;
+	margin-top: 5px;
+}
+
+.bannerNatureza{
+font-size: 8px;
+}
+

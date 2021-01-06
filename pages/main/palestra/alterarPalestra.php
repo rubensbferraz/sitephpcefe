@@ -3,12 +3,15 @@
 
 <head>
 	<?php include "../../../Config/conexao.php" ?>
+	<?php include "../../../Config/config.php" ?>
 	<?php ini_set('default_charset', 'UTF-8'); ?>
 	<title>Ordenando as Palestras</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="../../../Includes/bootstrap/css/bootstrap.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link rel="stylesheet" href="../../../css/palestra.css">
+	<link rel="stylesheet" href="../../../css/navegacao.css">
 
 	<script>
 		$(function() {
@@ -28,6 +31,13 @@
 </head>
 
 <body onload="document.palestra.palestrante.focus();">
+	<nav aria-label="breadcrumbs">
+		<ol class="breadcrumbs">
+			<li class="breadcrumbs-item &rang"><a href="<?PHP echo DIRPAGE ."index.php" ?>">Home</a></li>
+			<li class="breadcrumbs-item &rang"><a href="<?PHP echo "palestra.php" ?>">Cadastro de Palestra</a></li>
+			<li class="breadcrumbs-item &rang active" aria-current="page">Alterar Palestra</li>
+		</ol>
+	</nav>
 	<!--Inicio da recuperação de valores na tabela -->
 	<?php
 	$id = $_GET['idPalestra'];

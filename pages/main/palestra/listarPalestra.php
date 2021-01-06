@@ -7,6 +7,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<link rel="stylesheet" href="../../../includes/bootstrap/css/bootstrap.min.css" type="text/css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link rel="stylesheet" href="../../../css/palestra.css">
 
 </head>
 
@@ -50,10 +51,10 @@
 				?>
 						<tbody>
 							<tr>
-								<td><?php echo $dataPalestra; ?></td>
+								<td><?php echo date('d-m-Y', strtotime($dataPalestra)); ?></td>
 								<td><?php echo utf8_encode($orador); ?></td>
-								<td><?php echo utf8_encode($temaPalestra); ?></td>
-								<td><?php echo utf8_encode($diretor); ?></td>
+								<td><?php echo $temaPalestra; ?></td>
+								<td><?php echo $diretor; ?></td>
 								<td><button class="btn btn-btn-sucess" name="atualizar" ?><a href="alterarPalestra.php?<?php echo 'idPalestra'; ?>=<?php echo $vid; ?>">Atualizar</a> </button></td>
 							</tr>
 						</tbody>
@@ -94,7 +95,7 @@
 				?>
 						<tbody>
 							<tr>
-								<td><?php echo $dataSex; ?></td>
+								<td><?php echo date('d-m-Y', strtotime($dataSex)); ?></td>
 								<td><?php echo $oradorSex; ?></td>
 								<td><?php echo $temaSex; ?></td>
 								<td><?php echo $diretorSex; ?></td>

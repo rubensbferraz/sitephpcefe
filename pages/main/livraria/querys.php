@@ -15,14 +15,16 @@
 
     //trabalhando com a tabela Psicografo
     $mediunicaSql = mysqli_query($conn, "SELECT m.id, m.id_tipoobra, m.id_psicografo , psi.id, psi.psicografo from tb_mediunica m
-    inner join tb_psicografo psi on m.id=m.id_psicografo")or die("mysql error:" . $mediunicaSql . "<br>" . mysqli_error($conn));
+    inner join tb_psicografo psi on m.id=psi.id")or die("mysql error:" . $mediunicaSql . "<br>" . mysqli_error($conn));
     $listamediunica = $mediunicaSql->num_rows;
 
     //trabalhando com a tabela Autor Espiritual
-    $listaAutSql = mysqli_query($conn, "SELECT aut.id, aut.espiritoAutor, aut.id_psicografo , psi.id, psi.psicografo FROM tb_psicografo psi
-    inner join tb_autorespiritual aut on psi.id=aut.id_psicografo") or die("mysql error:" . $listaAutSql . "<br>" . mysqli_error($conn));
+    $listaAutSql = mysqli_query($conn, "SELECT aut.id, aut.espiritoAutor, aut.id_psicografo , psi.id, psi.psicografo 
+    FROM tb_psicografo psi
+    inner join tb_autorespiritual aut on 
+    psi.id=aut.id_psicografo") or die("mysql error:" . $listaAutSql . "<br>" . mysqli_error($conn));
     $listaAut =$listaAutSql->num_rows;
-
+    //inner join tb_psicografo on tb_autorespiritual.id_psicografo = tb_psicografo.id
 
     $listaTipoSql = mysqli_query($conn, "SELECT tipo.id, tipo.tipoObra FROM tb_tipoobra tipo;") or die("mysql error:" . $listaTipoSql . "<br>" . mysqli_error($conn));
     $listaTipo =$listaTipoSql->num_rows;

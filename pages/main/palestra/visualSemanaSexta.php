@@ -35,14 +35,14 @@
 					$diaPalestra = explode('-', $dadosQuery[0]);
 					if (isset($diaPalestra)) {
 						$diaBD = $dadosQuery['DataPalestra']; //echo $diaBD;
-						$orador = utf8_encode($dadosQuery['oradorPalestra']);
-						$tema = utf8_encode($dadosQuery['temaPalestra']);
+						$orador = $dadosQuery['oradorPalestra'];
+						$tema = $dadosQuery['temaPalestra'];
 						$sem = $dadosQuery['semanaPalestra']; //echo $sem['Semana'];
 						echo "
 						<div class='sexta border border-success p-2 rounded'>
 						<p class='sem text-uppercase'> ". strtoupper($sem)." / Dia:&nbsp &nbsp ". $dtPalestra['0'] ."</p>
-						<p class='ortD'>Orador: ". utf8_decode($orador)." </p>
-						<p class='tD'>Tema: ".utf8_decode($tema) ."</p> </div>
+						<p class='ortD'>Orador: ". utf8_encode($orador)." </p>
+						<p class='tD'>Tema: ".utf8_encode($tema) ."</p> </div>
 					";break;
 					}
 					else{

@@ -16,7 +16,7 @@
 }
 .cabeca{
     display: block;
-    background-image: url('/sitephpcefe/img/ImgHeader/plantacaoflores2.png');
+    background-image: url('/img/ImgHeader/plantacaoflores2.png');
     min-height: 150px;
     border: solid 1px #F8F9FA;
 }
